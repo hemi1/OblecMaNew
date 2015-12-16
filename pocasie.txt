@@ -1,0 +1,837 @@
+nie : <!DOCTYPE html>
+nie : <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+nie : <head>
+nie :   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+nie :   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+nie :   <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/_scripts/excanvas.min.js"></script><![endif]-->
+nie :   <script type="text/javascript" src="http://apis.google.com/js/plusone.js">
+nie :     {lang: 'sk'}
+nie :   </script>
+nie :   
+nie :   <meta name="description" content="Košice - predpoveď počasia na dnes a zajtra, hodinová predpoveď na 2 dni, počasie na 14 dní, dlhodobá predpoveď počasia na mesiac.">
+nie :     <link href="//front.pocasie.sk/_scripts/pocasie-v19.css" rel="stylesheet" media="screen" />
+nie :     <script src="//front.pocasie.sk/_scripts/jquery.php"></script>
+nie :     <script src="//front.pocasie.sk/_scripts/flot.js"></script>
+nie :       
+nie :   <!--[if lt IE 7]>
+nie :   <link href="/_scripts/pocasie-ie7.css" rel="stylesheet" media="screen" />
+nie :   <![endif]-->
+nie :   
+nie :   <style>
+nie :   #google-ad{position:absolute;top:27px;right:30px;box-shadow:4px 4px 4px #454550;z-index:20;}
+nie :   .ad *{font-family:Arial;font-size:13px;}
+nie :   .ad {border:1px solid #949494;padding:4px;background-color:white;background-color:#FEFEFE;}
+nie :   .ad td{text-align:left;}
+nie :   .ad a {text-decoration:none;color:#0000fe;font-weight:normal;}
+nie :   .ad a:hover {text-decoration:underline}
+nie :   .ad .sitelinks td {padding-left:10px;vertical-align:top;}
+nie :   .ad .sitelinks td a{font-size:12px;}
+nie :   .ad .title a{font-size:15px;font-weight:bold;}
+nie :   .ad .url {color:#4DB871}
+nie :   .ad .description {color:#222222}
+nie :   </style>
+nie :   
+nie :   <meta name="google-site-verification" content="gfMAT3zuluT2bukbwi6TvrbhP5gmX2NTi6Lk00-aCEo" /> 
+nie :   <meta http-equiv="Content-Language" content="sk" />
+nie :   
+nie :   <title>Pocasie.sk | Košice ~ predpoveď počasia</title>
+nie :     
+nie :   <link href="https://plus.google.com/106263941998352045443" rel="publisher" />
+nie :   <script type="text/javascript">
+nie :   window.___gcfg = {lang: 'sk'};
+nie :   (function() 
+nie :   {var po = document.createElement("script");
+nie :   po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+nie :   var s = document.getElementsByTagName("script")[0];
+nie :   s.parentNode.insertBefore(po, s);
+nie :   })();
+nie :   </script>
+nie :   
+nie :   <script type='text/javascript' src='http://partner.googleadservices.com/gampad/google_service.js'> 
+nie :   </script>
+nie :   <script type='text/javascript'> 
+nie :   GS_googleAddAdSenseService("ca-pub-6156068406208632");
+nie :   GS_googleEnableAllServices();
+nie :   </script>
+nie :   
+nie :     
+nie :   <script language="JavaScript">
+nie :   GA_googleAddAttr("level", "l2");
+nie :   GA_googleAddAttr("sub", "slovensko");
+nie :     GA_googleAddAttr("dest", "slovensko");
+nie :     GA_googleAddAttr("city", "kosice");
+nie :     GA_googleAddAttr("region", "kosicky-kraj");
+nie :     </script>
+nie :   
+nie :   <script type='text/javascript'> 
+nie :   GA_googleAddSlot("ca-pub-6156068406208632", "pocasie_sk_middle_336x300");
+nie :   GA_googleAddSlot("ca-pub-6156068406208632", "lmpocasie_right");
+nie :   GA_googleAddSlot("ca-pub-6156068406208632", "pocasie_sk_midbox");
+nie :   GA_googleAddSlot("ca-pub-6156068406208632", "pocasie_sk_728x90");
+nie :   GA_googleAddSlot("ca-pub-6156068406208632", "pocasie_sk_top_776x200");
+nie :   GA_googleAddSlot("ca-pub-6156068406208632", "pocasie_mobile");
+nie :   </script>
+nie :   <script type='text/javascript'> 
+nie :   GA_googleFetchAds();
+nie :   </script>
+nie :   
+nie :   <script type="text/javascript">
+nie :   
+nie :     var _gaq = _gaq || [];
+nie :     _gaq.push(['_setAccount', 'UA-895976-2']);
+nie :     _gaq.push(['_trackPageview']);
+nie :   
+nie :     (function() {
+nie :       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+nie :       ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+nie :       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+nie :     })();
+nie :   
+nie :   </script>
+nie :   
+nie :   <script>
+nie :   $(document).ready(function(){
+nie :     var collapsable = false;
+nie :     $('.nav').click(function(){
+nie :       var visibleItems = $('.nav li:visible').size();
+nie :       if (visibleItems == 0) {
+nie :         $('.nav li').show();
+nie :         collapsable = true;
+nie :       }
+nie :       if (collapsable && visibleItems > 0) {
+nie :         $('.nav li').hide();
+nie :       }
+nie :     });
+nie :   });
+nie :   </script>
+nie :   
+nie :   <meta name="google-site-verification" content="XQeKNvvxgVEM-8B84S9OOZawlEbcOxkdQvoLJNRDDcs" />
+nie :   
+nie :   <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+nie :   <script type="text/javascript">
+nie :     window.cookieconsent_options = {"message":"S&uacute;bory cookie n&aacute;m pom&aacute;haj&uacute; poskytova&tcaron; slu&zcaron;by. Pou&zcaron;&iacute;van&iacute;m na&scaron;ich slu&zcaron;ieb vyjadrujete s&uacute;hlas s t&yacute;m, &zcaron;e pou&zcaron;&iacute;vame s&uacute;bory cookie.","dismiss":"OK","learnMore":"&Dcaron;al&scaron;ie inform&aacute;cie","link":"http://www.travel.sk/info/cookies.html","theme":"dark-top"};
+nie :   </script>          
+nie :   <script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script>
+nie :   <!-- End Cookie Consent plugin -->
+nie :   </head>
+nie :   <body>
+nie : 
+nie :         
+nie :         
+nie :     <!-- Google Code for Pocasie.sk Remarketing List -->
+nie :     <script type="text/javascript">
+nie :     /* <![CDATA[ */
+nie :     var google_conversion_id = 1038776429;
+nie :     var google_conversion_language = "en";
+nie :     var google_conversion_format = "3";
+nie :     var google_conversion_color = "ffffff";
+nie :     var google_conversion_label = "tc_hCLOM5AIQ7fCp7wM";
+nie :     var google_conversion_value = 0;
+nie :     /* ]]> */
+nie :     </script>
+nie :     <script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js">
+nie :     </script>
+nie :     <noscript>
+nie :       <div style="display:inline;">
+nie :         <img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1038776429/?label=tc_hCLOM5AIQ7fCp7wM&amp;guid=ON&amp;script=0"/>
+nie :       </div>
+nie :     </noscript>
+nie :     
+nie :     <div class="wrapper">
+nie :       <!-- pocasie_sk_top -->
+nie : 
+nie :       <div class="mob-hide" align=center><script type='text/javascript'>
+nie :         GA_googleFillSlot("pocasie_sk_top_776x200");
+nie :       </script></div>
+nie :     
+nie :       <div class="header">
+nie :         
+nie :         <a href="/"><div class="logo"></div></a>
+nie :         
+nie :                 
+nie :                 
+nie :         <div class="r-panel">
+nie :           <table cellpadding=0 cellspacing=0>
+nie :             <tr>
+nie :               <td><a href="/last-minute/"><img src="//front.pocasie.sk/_imgs/lo/lmpocasie-ico.png" width="60" height="38" alt="last minute počasie" border=0 /></a></td>
+nie :               <td><a href="http://www.travel.sk/"><img src="//front.pocasie.sk/_imgs/lo/travel-ico2.png" width="57" height="38" title="Dovolenka" alt="Travel.Sk" border=0 /></a></td>
+nie :               <td><a href="http://last-minute.travel.sk/"><img src="//front.pocasie.sk/_imgs/lo/last-minute-travel-ico2.png" width="57" height="38" alt="Travel.Sk" border=0 title="Last Minute" /></a></td>
+nie :               <td><a href="http://www.reisen.sk/"><img src="//front.pocasie.sk/_imgs/lo/reisen-ico.png" width="77" height="38" title="rakúske ck" alt="reisen.sk" border=0 /></a></td>
+nie :               <td><a href="http://www.facebook.com/Pocasie.sk"><img src="//front.pocasie.sk/_imgs/lo/facebook-ico.png" width="37" height="38" style="margin-left:15px" border=0 /></a></td>
+nie :               <td>
+nie :                 <div class="google-plus" style="margin-top:7px">
+nie :                   <!-- Place this tag where you want the +1 button to render -->
+nie :                   <g:plusone></g:plusone>
+nie :                   
+nie :                   <!-- Place this render call where appropriate -->
+nie :                   <script type="text/javascript">
+nie :                     window.___gcfg = {lang: 'sk'};
+nie :                   
+nie :                     (function() {
+nie :                       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+nie :                       po.src = 'https://apis.google.com/js/plusone.js';
+nie :                       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+nie :                     })();
+nie :                   </script>
+nie :                 </div>
+nie :               </td>
+nie :             </tr>
+nie :           </table>
+nie :           
+nie :           <form action="/map/" method=GET>
+nie :             <table style="float:right; margin-top:9px;">
+nie :               <tr>
+nie :                 <td><input type="text" name="search" class="search-input" style="width:180px" /></td>
+nie :                 <td><input type="submit" class="search-btn" value="" /></td>
+nie :               </tr>
+nie :             </table>
+nie :           </form>
+nie :           <div style="clear:both"></div>
+nie :          </div> 
+nie :           
+nie :         <div class="l-nav-wrap"></div>
+nie :         <div class="r-nav-wrap"></div> 
+nie :           
+nie :       </div>
+nie :       
+nie :         <div class="nav">
+nie :             <ul>  
+nie :               <li>
+nie :                 <a href='/slovensko/'>Slovensko</a>
+nie :                 <div class="nav-content" id="slovensko">
+nie :                   <div class="arrow" style="left:50px;"></div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/slovensko/banskobystricky-kraj/'>Banskobystrický kraj</a></li><li><a href='/slovensko/bratislavsky-kraj/'>Bratislavský kraj</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/slovensko/kosicky-kraj/'>Košický kraj</a></li><li><a href='/slovensko/nitriansky-kraj/'>Nitriansky kraj</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/slovensko/presovsky-kraj/'>Prešovský kraj</a></li><li><a href='/slovensko/trenciansky-kraj/'>Trenčiansky kraj</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/slovensko/trnavsky-kraj/'>Trnavský kraj</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/slovensko/zilinsky-kraj/'>Žilinský kraj</a></li></ul>
+nie :                     </div>
+nie :                                     <div style="clear:both"></div>
+nie :                 </div>
+nie :               </li>
+nie :               
+nie :               <li>
+nie :                 <a href='/europa/'>Európa</a>
+nie :                 <div class="nav-content" id="europa">
+nie :                   <div class="arrow" style="left:130px"></div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/albansko/'>Albánsko</a></li><li><a href='/andorra/'>Andorra</a></li><li><a href='/belgicko/'>Belgicko</a></li><li><a href='/bielorusko/'>Bielorusko</a></li><li><a href='/bosna-a-hercegovina/'>Bosna a Hercegovina</a></li><li><a href='/bulharsko/'>Bulharsko</a></li><li><a href='/chorvatsko/'>Chorvátsko</a></li><li><a href='/cyprus/'>Cyprus</a></li><li><a href='/dansko/'>Dánsko</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/cesko/'>Česká republika</a></li><li><a href='/cierna-hora/'>Čierna Hora</a></li><li><a href='/estonsko/'>Estónsko</a></li><li><a href='/finsko/'>Fínsko</a></li><li><a href='/francuzsko/'>Francúzsko</a></li><li><a href='/grecko/'>Grécko</a></li><li><a href='/holandsko/'>Holandsko</a></li><li><a href='/irsko/'>Írsko</a></li><li><a href='/island/'>Island</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/lichtenstajnsko/'>Lichtenštajnsko</a></li><li><a href='/litva/'>Litva</a></li><li><a href='/lotyssko/'>Lotyšsko</a></li><li><a href='/luxembursko/'>Luxembursko</a></li><li><a href='/macedonsko/'>Macedónsko</a></li><li><a href='/madarsko/'>Maďarsko</a></li><li><a href='/malta/'>Malta</a></li><li><a href='/moldavska-republika/'>Moldavská republika</a></li><li><a href='/monako/'>Monako</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/nemecko/'>Nemecko</a></li><li><a href='/norsko/'>Nórsko</a></li><li><a href='/portugalsko/'>Portugalsko</a></li><li><a href='/polsko/'>Poľsko</a></li><li><a href='/rakusko/'>Rakúsko</a></li><li><a href='/rumunsko/'>Rumunsko</a></li><li><a href='/san-marino/'>San Marino</a></li><li><a href='/slovensko/'>Slovensko</a></li><li><a href='/slovinsko/'>Slovinsko</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/srbsko/'>Srbsko</a></li><li><a href='/taliansko/'>Taliansko</a></li><li><a href='/ukrajina/'>Ukrajina</a></li><li><a href='/vatikan/'>Vatikán</a></li><li><a href='/velka-britania/'>Veľká Británia</a></li><li><a href='/spanielsko/'>Španielsko</a></li><li><a href='/svajciarsko/'>Švajčiarsko</a></li><li><a href='/svedsko/'>Švédsko</a></li></ul>
+nie :                     </div>
+nie :                                     <div style="clear:both"></div>
+nie :                 </div>
+nie :               </li>
+nie :               
+nie :               <li>
+nie :                 <a href='/azia/'>�?zia</a>
+nie :                 <div class="nav-content" id="azia">
+nie :                   <div class="arrow" style="left:190px;"></div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/afganistan/'>Afganistan</a></li><li><a href='/armensko/'>Arménsko</a></li><li><a href='/azerbajdzan/'>Azerbajdžan</a></li><li><a href='/bahrajn/'>Bahrajn</a></li><li><a href='/banglades/'>Bangladéš</a></li><li><a href='/bhutan/'>Bhután</a></li><li><a href='/brunejsky-sultanat/'>Brunejský sultanát</a></li><li><a href='/cina/'>Čína</a></li><li><a href='/filipiny/'>Filipíny</a></li><li><a href='/gruzinsko/'>Gruzínsko</a></li><li><a href='/hong-kong/'>Hong Kong</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/india/'>India</a></li><li><a href='/indonezia/'>Indonézia</a></li><li><a href='/irak/'>Irak</a></li><li><a href='/iran/'>Irán</a></li><li><a href='/izrael/'>Izrael</a></li><li><a href='/japonsko/'>Japonsko</a></li><li><a href='/jemen/'>Jemen</a></li><li><a href='/jordansko/'>Jordánsko</a></li><li><a href='/kambodza/'>Kambodža</a></li><li><a href='/katar/'>Katar</a></li><li><a href='/kazachstan/'>Kazachstan</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/kirgizsko/'>Kirgizsko</a></li><li><a href='/korea/'>Kórea</a></li><li><a href='/korejska-republika/'>Kórejská republika</a></li><li><a href='/kuvajt/'>Kuvajt</a></li><li><a href='/laos/'>Laos</a></li><li><a href='/libanon/'>Libanon</a></li><li><a href='/macau/'>Macau</a></li><li><a href='/malajzia/'>Malajzia</a></li><li><a href='/maledivy/'>Maldivy</a></li><li><a href='/mongolsko/'>Mongolsko</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/myanmar/'>Myanmar</a></li><li><a href='/nepal/'>Nepál</a></li><li><a href='/oman/'>Omán</a></li><li><a href='/pakistan/'>Pakistan</a></li><li><a href='/palestinske-uzemia/'>Palestínske územia</a></li><li><a href='/rusko/'>Rusko</a></li><li><a href='/saudska-arabia/'>Saudská Arábia</a></li><li><a href='/seychely/'>Seychely</a></li><li><a href='/singapur/'>Singapúr</a></li><li><a href='/sae/'>Spojené arabské emiráty</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/sri-lanka/'>Srí Lanka</a></li><li><a href='/syria/'>Sýria</a></li><li><a href='/tadzikistan/'>Tadžikistan</a></li><li><a href='/taiwan/'>Taiwan</a></li><li><a href='/thajsko/'>Thajsko</a></li><li><a href='/turecko/'>Turecko</a></li><li><a href='/turkmensko/'>Turkménsko</a></li><li><a href='/uzbekistan/'>Uzbekistan</a></li><li><a href='/vietnam/'>Vietnam</a></li><li><a href='/vychodny-timor/'>Východný Timor</a></li></ul>
+nie :                     </div>
+nie :                                     <div style="clear:both"></div>
+nie :                 </div>
+nie :               </li>
+nie :               
+nie :               <li>
+nie :                 <a href='/afrika/'>Afrika</a>
+nie :                 <div class="nav-content" id="afrika">
+nie :                   <div class="arrow" style="left:245px;"></div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/alzirsko/'>Alžírsko</a></li><li><a href='/angola/'>Angola</a></li><li><a href='/benin/'>Benin</a></li><li><a href='/botswana/'>Botswana</a></li><li><a href='/burkina-faso/'>Burkina Faso</a></li><li><a href='/burundi/'>Burundi</a></li><li><a href='/dzibutsko/'>Džibutsko</a></li><li><a href='/cad/'>ČAD</a></li><li><a href='/egypt/'>Egypt</a></li><li><a href='/eritrea/'>Eritrea</a></li><li><a href='/etiopia/'>Etiópia</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/gabon/'>Gabon</a></li><li><a href='/gambia/'>Gambia</a></li><li><a href='/ghana/'>Ghana</a></li><li><a href='/guinea/'>Guinea</a></li><li><a href='/guinea-bissau/'>Guinea-Bissau</a></li><li><a href='/juzna-afrika/'>Južná Afrika</a></li><li><a href='/kamerun/'>Kamerun</a></li><li><a href='/kapverdy/'>Kapverdy</a></li><li><a href='/kena/'>Ke�?a</a></li><li><a href='/komory/'>Komory</a></li><li><a href='/kongo/'>Kongo</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/lesotho/'>Lesotho</a></li><li><a href='/liberia/'>Libéria</a></li><li><a href='/libya/'>Líbya</a></li><li><a href='/madagaskar/'>Madagaskar</a></li><li><a href='/malawi/'>Malawi</a></li><li><a href='/mali/'>Mali</a></li><li><a href='/maroko/'>Maroko</a></li><li><a href='/mauricius/'>Maurícius</a></li><li><a href='/mauritania/'>Mauritánia</a></li><li><a href='/mayotte/'>Mayotte</a></li><li><a href='/mozambik/'>Mozambik</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/namibia/'>Namíbia</a></li><li><a href='/niger/'>Niger</a></li><li><a href='/nigeria/'>Nigéria</a></li><li><a href='/pobrezie-slonoviny/'>Pobrežie Slonoviny</a></li><li><a href='/reunion/'>Réunion</a></li><li><a href='/rovnikova-guinea/'>Rovníková Guinea</a></li><li><a href='/rwanda/'>Rwanda</a></li><li><a href='/senegal/'>Senegal</a></li><li><a href='/sierra-leone/'>Sierra Leone</a></li><li><a href='/somalsko/'>Somálsko</a></li><li><a href='/stredoafricka-republika/'>Stredoafrická republika</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/sudan/'>Sudán</a></li><li><a href='/svazijsko/'>Svazijsko</a></li><li><a href='/svata-helena/'>Svätá Helena</a></li><li><a href='/svaty-tomas-a-princov-ostrov/'>Svätý Tomáš a Princov ostrov</a></li><li><a href='/tanzania/'>Tanzánia</a></li><li><a href='/togo/'>Togo</a></li><li><a href='/tunisko/'>Tunisko</a></li><li><a href='/uganda/'>Uganda</a></li><li><a href='/zambia/'>Zambia</a></li><li><a href='/zapadna-sahara/'>Západná Sahara</a></li><li><a href='/zimbabwe/'>Zimbabwe</a></li></ul>
+nie :                     </div>
+nie :                                     <div style="clear:both"></div>
+nie :                 </div>
+nie :               </li>
+nie :               
+nie :               <li>
+nie :                 <a href='/severna-amerika/'>Severná a stredná Amerika</a>
+nie :                 <div class="nav-content" id="severna-amerika">
+nie :                   <div class="arrow"></div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/anguilla/'>Anguilla</a></li><li><a href='/antigua-a-barbuda/'>Antigua a Barbuda</a></li><li><a href='/bahamy/'>Bahamy</a></li><li><a href='/barbados/'>Barbados</a></li><li><a href='/belize/'>Belize</a></li><li><a href='/bermuda/'>Bermuda</a></li><li><a href='/dominika/'>Dominika</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/dominikanska/'>Dominikánska republika</a></li><li><a href='/grenada/'>Grenada</a></li><li><a href='/gronsko/'>Grónsko</a></li><li><a href='/guadeloupe/'>Guadeloupe</a></li><li><a href='/guatemala/'>Guatemala</a></li><li><a href='/haiti/'>Haiti</a></li><li><a href='/holandske-antily/'>Holandské Antily</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/honduras/'>Honduras</a></li><li><a href='/jamajka/'>Jamajka</a></li><li><a href='/kajmanie-ostrovy/'>Kajmanie ostrovy</a></li><li><a href='/kanada/'>Kanada</a></li><li><a href='/kostarika/'>Kostarika</a></li><li><a href='/kuba/'>Kuba</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/mexiko/'>Mexiko</a></li><li><a href='/montserrat/'>Montserrat</a></li><li><a href='/nikaragua/'>Nikaragua</a></li><li><a href='/turks-caicos/'>ostrovy Turks a Caicos</a></li><li><a href='/panama/'>Panama</a></li><li><a href='/panenske-ostrovy/'>Panenské ostrovy</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/portoriko/'>Portoriko</a></li><li><a href='/salvador/'>Salvádor</a></li><li><a href='/svata-lucia/'>Svätá Lucia</a></li><li><a href='/svaty-kristof-a-nevis/'>Svätý Krištof a Nevis</a></li><li><a href='/svaty-vincent-a-grenadiny/'>Svätý Vincent a Grenadíny</a></li><li><a href='/usa/'>USA</a></li></ul>
+nie :                     </div>
+nie :                                     <div style="clear:both"></div>
+nie :                 </div>
+nie :               </li>
+nie :               
+nie :               <li>
+nie :                 <a href='/juzna-amerika/'>Južná Amerika</a>
+nie :                 <div class="nav-content" id="juzna-amerika">
+nie :                   <div class="arrow" style="left:504px;"></div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/argentina/'>Argentína</a></li><li><a href='/aruba/'>Aruba</a></li><li><a href='/bolivia/'>Bolívia</a></li><li><a href='/brazilia/'>Brazília</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/chile/'>Chile</a></li><li><a href='/ekvador/'>Ekvádor</a></li><li><a href='/falklandske-ostrovy/'>Falklandské ostrovy</a></li><li><a href='/francuzska-guyana/'>Francúzska Guyana</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/guyana/'>Guyana</a></li><li><a href='/juzna-georgia-a-juzne-ostrovy-sandwich/'>Južná Georgia a južné ostrovy Sandwich</a></li><li><a href='/kolumbia/'>Kolumbia</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/paraguaj/'>Paraguaj</a></li><li><a href='/peru/'>Peru</a></li><li><a href='/surinam/'>Surinam</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/trinidad-a-tobago/'>Trinidad a Tobago</a></li><li><a href='/uruguaj/'>Uruguaj</a></li><li><a href='/venezuela/'>Venezuela</a></li></ul>
+nie :                     </div>
+nie :                                     <div style="clear:both"></div>
+nie :                 </div>
+nie :               </li>
+nie :               
+nie :               <li>
+nie :                 <a href='/australia-a-oceania/'>Austrália a Oceánia</a>
+nie :                 <div class="nav-content" id="australia-a-oceania">
+nie :                   <div class="arrow" style="left:630px;"></div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/australia/'>Austrália</a></li><li><a href='/cookove-ostrovy/'>Cookove ostrovy</a></li><li><a href='/fidzi/'>Fidži</a></li><li><a href='/francuzska-polynezia/'>Francúzska Polynézia</a></li><li><a href='/guam/'>Guam</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/kiribati/'>Kiribati</a></li><li><a href='/kokosove-ostrovy/'>Kokosové ostrovy</a></li><li><a href='/marshallove-ostrovy/'>Marshallove ostrovy</a></li><li><a href='/mikronezia/'>Mikronézia</a></li><li><a href='/niue/'>Niue</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/nova-kaledonia/'>Nová Kaledónia</a></li><li><a href='/novy-zeland/'>Nový Zéland</a></li><li><a href='/palau/'>Palau</a></li><li><a href='/papua-nova-guinea/'>Papua - Nová Guinea</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/pitcairnove-ostrovy/'>Pitcairnove ostrovy</a></li><li><a href='/samoa/'>Samoa</a></li><li><a href='/tokelau/'>Tokelau</a></li><li><a href='/tonga/'>Tonga</a></li></ul>
+nie :                     </div>
+nie :                                       <div class="column">
+nie :                       <ul><li><a href='/tuvalu/'>Tuvalu</a></li><li><a href='/vanuatu/'>Vanuatu</a></li><li><a href='/vianocne-ostrovy/'>Vianočné ostrovy</a></li><li><a href='/salamunove-ostrovy/'>Šalamúnove ostrovy</a></li></ul>
+nie :                     </div>
+nie :                                     <div style="clear:both"></div>
+nie :                 </div>
+nie :               </li>
+nie :               
+nie :               <li style="border:0px">
+nie :                 <a style="font-weight:bold" href="/last-minute/">last minute počasie</a>
+nie :               </li>
+nie :               
+nie :             </ul>
+nie :           </div>          
+nie :           
+nie :       <div class="main-content">      
+nie :         <div class="page">
+nie :           <div class="page-nav">
+nie :       <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+nie :         <a href="/" itemprop="url">
+nie :         <span itemprop="title">Pocasie.sk</span>
+nie :         </a>
+nie :       </span>&nbsp;&nbsp;&gt;&nbsp;&nbsp;
+nie :       <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+nie :         <a href="/europa/" itemprop="url">
+nie :         <span itemprop="title">Európa</span>
+nie :         </a>
+nie :       </span>&nbsp;&nbsp;&gt;&nbsp;&nbsp;
+nie :       <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+nie :         <a href="/slovensko/" itemprop="url">
+nie :         <span itemprop="title">Počasie Slovensko</span>
+nie :         </a>
+nie :       </span>&nbsp;&nbsp;&gt;&nbsp;&nbsp;
+nie :       <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+nie :         <a href="/slovensko/kosicky-kraj/" itemprop="url">
+nie :         <span itemprop="title">Košický kraj</span>
+nie :         </a>
+nie :       </span></div>
+nie : <div class="city-content">
+nie :   
+nie :   <h1>Košice ~ Slovensko</h1>
+nie :   
+nie :   <div class="menu-wrap">
+nie :   <ul class="menu">
+nie :     <li><a href="/slovensko/kosice/" class="active">Dnes a zajtra</a></li>
+nie :     <li><a href="/slovensko/kosice/h.html" >Hodinová predpoveď</a></li>
+nie :     <li><a href="/slovensko/kosice/5.html" >5 d�?ová predpoveď</a></li>
+nie :     <li><a href="/slovensko/kosice/14.html" >Počasie na 14 dní</a></li>
+nie :     <li><a href="/slovensko/kosice/30.html" >Dlhodobá predpoveď</a></li>
+nie :     <li><a href="/slovensko/kosice/w.html" >Víkend</a></li>
+nie :     <li><a href="/slovensko/kosice/g.html" >Grafická predpoveď</a></li>
+nie :   </ul>
+nie :   <div style="clear:both"></div>
+nie :   </div>
+nie :   
+nie :          
+nie :     <h2 title="vzdialenosť Košice - Kosice, Barca 6 km">Počasie teraz - Kosice, Barca</h2>
+nie :   <div id="placeholder" style="width:400px;height:150px;float:right"></div>
+nie :   
+nie :       <script type="text/javascript">
+nie :       $(function () {
+nie :         
+nie :         // generate a dataset
+nie :         var d1 = [];
+nie : d1.push([1450292400000,1]);
+nie : d1.push([1450296000000,1]);
+nie : d1.push([1450299600000,1]);
+nie : d1.push([1450303200000,1]);
+nie : d1.push([1450306800000,0]);
+nie : d1.push([1450310400000,0]);
+nie : d1.push([1450314000000,0]);
+nie : d1.push([1450317600000,0]);
+nie : d1.push([1450321200000,0]);
+nie : d1.push([1450324800000,-1]);
+nie : d1.push([1450328400000,-1]);
+nie : d1.push([1450332000000,-1]);
+nie : d1.push([1450335600000,-1]);
+nie : d1.push([1450339200000,-1]);
+nie : d1.push([1450342800000,-1]);
+nie : d1.push([1450346400000,-1]);
+nie : d1.push([1450350000000,-1]);
+nie : d1.push([1450353600000,0]);
+nie : 
+nie :           
+nie :           
+nie :         var placeholder = $("#placeholder");
+nie :         
+nie :         function celsiusFormatter(v, axis) {
+nie :           return v.toFixed(axis.tickDecimals) +"°C";
+nie :         }
+nie :         
+nie :         function precipFormatter(v, axis) {
+nie :           return v.toFixed(axis.tickDecimals) +" mm";
+nie :         }
+nie :         
+nie :         function percentageFormatter(v, axis) {
+nie :           return v.toFixed(axis.tickDecimals) +" % ";
+nie :         }
+nie :         
+nie :         function raw(plot, ctx) {
+nie :           var data = plot.getData();
+nie :           var axes = plot.getAxes();
+nie :           var offset = plot.getPlotOffset();
+nie :           for (var i = 0; i < data.length; i++) {
+nie :             var series = data[i];
+nie :             for (var j = 0; j < series.data.length; j++) {
+nie :               var color = (series.data[j][1] > 0) ? "#D14836" : "#43B8E8";
+nie :               var d = (series.data[j]);
+nie :               var x = offset.left + axes.xaxis.p2c(d[0]);
+nie :               var y = offset.top + axes.yaxis.p2c(d[1]);
+nie :               var r = 2;                
+nie :               ctx.lineWidth = 2;
+nie :               ctx.beginPath();
+nie :               ctx.arc(x,y,r,0,Math.PI*2,true);
+nie :               ctx.closePath();            
+nie :               ctx.fillStyle = color;
+nie :               ctx.fill();
+nie :             }    
+nie :           }
+nie :         }  
+nie :         
+nie :         var plot = $.plot(placeholder, [{data:d1,lines:{show:true},yaxis:1,label:'Teplota',color:'#323232'}],{grid:{markings:[{color:'#f6f6f6',xaxis:{from:1450250460000,to:1450280340000}},{color:'#f6f6f6',xaxis:{from:1450336920000,to:1450366740000}}],backgroundColor:'#C5C5C5',borderWidth:1,borderColor:'#C5C5C5'},legend:{backgroundOpacity:0},xaxes:[{mode:'time',timeformat:'%d.%m.<br>%H:%M',ticks:[1450296000000,1450303200000,1450310400000,1450317600000,1450324800000,1450332000000,1450339200000,1450346400000]}],yaxes:[{min:-6,max:6,tickFormatter:celsiusFormatter},{min:0.1,max:2,position:'right',tickFormatter:precipFormatter}]});
+nie :         
+nie :         // add labels
+nie :         var o;o = plot.pointOffset({x: 1450296000000 , y:1});
+nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/ciastocne-oblacno-n.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
+nie : o = plot.pointOffset({x: 1450303200000 , y:1});
+nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/ciastocne-oblacno-n.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
+nie : o = plot.pointOffset({x: 1450310400000 , y:0});
+nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/polooblacno-n.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
+nie : o = plot.pointOffset({x: 1450317600000 , y:0});
+nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/oblacno-n.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
+nie : o = plot.pointOffset({x: 1450324800000 , y:-1});
+nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/oblacno-n.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
+nie : o = plot.pointOffset({x: 1450332000000 , y:-1});
+nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/oblacno-n.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
+nie : o = plot.pointOffset({x: 1450339200000 , y:-1});
+nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/oblacno.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
+nie : o = plot.pointOffset({x: 1450346400000 , y:-1});
+nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/oblacno.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
+nie :   
+nie :         
+nie :     });
+nie :     </script>  <div class="current-weather">
+nie :     <table cellpadding=2 cellspacing=0 border=0>
+nie :       <tr>
+nie :         <td colspan="5" class="updated">Aktualizované: Streda, 16.12.2015 17:30</td>
+nie :       </tr>
+nie :       <tr>
+nie :         <td rowspan="2">
+nie :                     <img src="//front.pocasie.sk/_imgs/f60x60/jasno-n.gif" width=60 height=60 border=0 alt="jasno">
+nie :                   </td>
+nie :         <td rowspan="2">
+nie :           <span class="curr-temp">1°C</span>
+nie :           <div class="updated">jasno</div>
+nie :         </td>
+nie :         <td rowspan="2" valign=top style="padding:0px 30px">
+nie :           <img src='//front.pocasie.sk/_imgs/windsp36x36/w.gif' title='západný vietor' alt='W' width=36 height=36 align=absmiddle />&nbsp;5 km/h        </td>
+nie :         <td>
+nie :                       <img src="//front.pocasie.sk/_imgs/v2m/sunri36x36.gif" />
+nie :             <div>07:21</div>
+nie :                   </td>
+nie :         <td>
+nie :                       <img src="//front.pocasie.sk/_imgs/v2m/sunse36x36.gif" />
+nie :             <div>15:39</div>
+nie :                   </td>
+nie :       </tr>
+nie :       <tr>
+nie :         <td>
+nie :                       <img src="//front.pocasie.sk/_imgs/v2m/moonri36x36_2.gif" />
+nie :             <div>10:32</div>
+nie :                   </td>
+nie :         <td>
+nie :                       <img src="//front.pocasie.sk/_imgs/v2m/moonse36x36_2.gif" />
+nie :             <div>21:23</div>
+nie :                   </td>
+nie :       </tr>
+nie :     </table>
+nie :   </div>
+nie :   <div style="clear:both;"></div>
+nie :   <div style="margin:10px 0px;"></div>
+nie :     
+nie :   <div class="city-preview">
+nie :     <div class="static-map"><div id='map' style='width:250px;height:205px'><a href='/map/index.html?loc=slovensko/kosice'><img src='http://maps.google.com/staticmap?center=48.72,21.25&zoom=6&size=250x205&maptype=terrain&markers=48.72,21.25,blue&key=ABQIAAAA7ukWDcywwnGdcpofRvsAPBSDBXU1enW607y62yh_pBhAVAvKchTvO_zL_f8S7JLp5Rcjx5jbdxJ-wQ' border=0></a></div><br />Okolité: <a href='/slovensko/kosice-juh/'>Košice - Juh</a>, <a href='/slovensko/kosice-zapad/'>Košice - Západ</a>, <a href='/slovensko/kosice-sever/'>Košice - Sever</a>, <a href='/slovensko/sidlisko-kvp/'>Košice - Sídlisko KVP</a>, <a href='/slovensko/lunik-ix/'>Luník IX</a>, <a href='/slovensko/sidlisko-tahanovce/'>Sídlisko Ťahanovce</a>, <a href='/slovensko/dargovskych-hrdinov/'>Košice - Dargovských hrdinov</a>, <a href='/slovensko/barca/'>Barca</a>, <a href='/slovensko/nad-jazerom/'>Košice - Nad jazerom</a></div>
+nie :     <div class="fb-plus-banner"><script type='text/javascript'>GA_googleFillSlot('pocasie_sk_midbox');</script></div>
+nie :     <div class="city-banner">
+nie : <!-- pocasie_sk_middle_336x300 --><script type='text/javascript'> 
+nie : GA_googleFillSlot("pocasie_sk_middle_336x300");
+nie : </script><!-- eof umiestnenie --></div>
+nie :     <div style="clear:both"></div>
+nie :   </div>
+nie :   
+nie :   <ul class="legend">
+nie :     <li><img src="//front.pocasie.sk/_imgs/windsp16x16/w.gif" align="absmiddle" title="smer vetra" width=16 height=16 />&nbsp;smer vetra</li>
+nie :     <li><img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;úhrn zrážok</li>
+nie :     <li><img src="//front.pocasie.sk/_imgs/v2m/preciprob24x24.png" align="absmiddle" title="pravdepodobnosť zrážok" width=16 height=16 />&nbsp;pravdepodobnosť zrážok</li>
+nie :     <li><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;priemerná oblačnosť</li>
+nie :     <li><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;relatívna vlhkosť</li>
+nie :     <li><img src="//front.pocasie.sk/_imgs/v2m/uvi24x24.png" align="absmiddle" title="intenzita UV žiarenia" width=16 height=16 />&nbsp;intenzita UV žiarenia</li>
+nie :     <li><img src="//front.pocasie.sk/_imgs/v2m/waterte16x16.png" align="absmiddle" title="teplota mora / vody" width=16 height=16 />&nbsp;teplota vody</li>
+nie :   </ul>  
+nie :   <div class="clear" style="height:10px"></div>
+nie :   
+ZACIATOK
+    <ul class='daily-forecast '>
+      <li class='date'>
+TU
+        <div ><i>Dnes</i> - Streda<br><font size=6>16.</font><br>DECEMBER</div>
+      </li>
+      <li class='weather'>
+        <img width=60 height=60 border=0 src='//front.pocasie.sk/_imgs/f60x60/polooblacno.gif' alt='polooblačno' /><br>polooblačno
+      </li>
+      <li class='temp'>
+
+ CEZ DEN 6 stupnov        <span class='day'>6°C</span><br /><span class='night'>-2°C</span>
+      </li>
+      <li class='info'>
+        <p></p><p><i>Večer a v noci</i>: večer najskôr čiastočne oblačno, neskôr v noci oblačno. Najnižšia teplota -1°C. Rýchlosť vetra 8 až&nbsp;18&nbsp;km/h</p>
+      </li>
+      <li class='additional-info'>
+
+ VIETOR 5
+        <div><img src='//front.pocasie.sk/_imgs/windsp16x16/n.gif' alt='N' title='severný vietor' width=16 height=16 align=absmiddle />&nbsp; 5 km/h</div>
+
+ ZRAZKY 3
+        <div><img src="//front.pocasie.sk/_imgs/v2m/preciprob24x24.png" align="absmiddle" title="pravdepodobnosť zrážok" width=16 height=16 />&nbsp;3%</div>
+        <div><img src="//front.pocasie.sk/_imgs/v2m/uvi24x24.png" align="absmiddle" title="intenzita UV žiarenia" width=16 height=16 />&nbsp;slabá (1/18)</div>
+        <div></div>
+      </li>
+KONIEC
+nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
+nie :       <li class='date'>
+nie :         <div>19:00</div>
+nie :       </li>
+nie :       <li class='weather'>
+nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/ciastocne-oblacno-n.gif' alt='čiastočne oblačno'>
+nie :       </li>
+nie :       <li class='temp'>
+nie :         <span class='day'>2°C</span>
+nie :       </li>
+nie :       <li class='info'>
+nie :         <p>čiastočne oblačno
+nie :       </li>
+nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/sw.gif' title='juhozápadný vietor' alt='SW' width=16 height=16 align=absmiddle />&nbsp; 8 km/h</li>
+nie :       <li class='additional-info'>
+nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;0.0mm
+nie :       </li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;28%</li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;90%</li>
+nie :     </ul>
+nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
+nie :       <li class='date'>
+nie :         <div>22:00</div>
+nie :       </li>
+nie :       <li class='weather'>
+nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/ciastocne-oblacno-n.gif' alt='čiastočne oblačno'>
+nie :       </li>
+nie :       <li class='temp'>
+nie :         <span class='day'>1°C</span>
+nie :       </li>
+nie :       <li class='info'>
+nie :         <p>čiastočne oblačno
+nie :       </li>
+nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/s.gif' title='južný vietor' alt='S' width=16 height=16 align=absmiddle />&nbsp; 8 km/h</li>
+nie :       <li class='additional-info'>
+nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;0.0mm
+nie :       </li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;26%</li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;99%</li>
+nie :     </ul>
+ZACIATOK
+    <ul class='daily-forecast '>
+      <li class='date'>
+        <div ><i>Zajtra</i> - Štvrtok<br><font size=6>17.</font><br>DECEMBER</div>
+      </li>
+      <li class='weather'>
+        <img width=60 height=60 border=0 src='//front.pocasie.sk/_imgs/f60x60/oblacno-so-slabym-snezenim.gif' alt='oblačno so slabým snežením' /><br>oblačno so slabým snežením
+      </li>
+      <li class='temp'>
+        <span class='day'>1°C</span><br /><span class='night'>-1°C</span>
+      </li>
+      <li class='info'>
+        <p></p><p><i>Ráno a cez de�?</i>: oblačno. Najvyššia teplota 0°C. Rýchlosť vetra 18 až&nbsp;23&nbsp;km/h<br /><i>Večer a v noci</i>: večer najskôr oblačno so slabým snežením, neskôr v noci oblačno so snehovými prehánkami. Najnižšia teplota 0°C. Rýchlosť vetra 18 až&nbsp;23&nbsp;km/h. Predpokladaný nárast snehovej pokrývky o&nbsp;2&nbsp;cm</p>
+      </li>
+      <li class='additional-info'>
+        <div><img src='//front.pocasie.sk/_imgs/windsp16x16/s.gif' alt='S' title='južný vietor' width=16 height=16 align=absmiddle />&nbsp; 18 km/h</div>
+        <div><img src="//front.pocasie.sk/_imgs/v2m/preciprob24x24.png" align="absmiddle" title="pravdepodobnosť zrážok" width=16 height=16 />&nbsp;48%</div>
+        <div><img src="//front.pocasie.sk/_imgs/v2m/uvi24x24.png" align="absmiddle" title="intenzita UV žiarenia" width=16 height=16 />&nbsp;slabá (1/18)</div>
+        <div></div>
+      </li>
+KONIEC
+nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
+nie :       <li class='date'>
+nie :         <div>01:00</div>
+nie :       </li>
+nie :       <li class='weather'>
+nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/polooblacno-n.gif' alt='polooblačno'>
+nie :       </li>
+nie :       <li class='temp'>
+nie :         <span class='day'>0°C</span>
+nie :       </li>
+nie :       <li class='info'>
+nie :         <p>polooblačno
+nie :       </li>
+nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/s.gif' title='južný vietor' alt='S' width=16 height=16 align=absmiddle />&nbsp; 8 km/h</li>
+nie :       <li class='additional-info'>
+nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;0.0mm
+nie :       </li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;46%</li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;97%</li>
+nie :     </ul>
+nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
+nie :       <li class='date'>
+nie :         <div>04:00</div>
+nie :       </li>
+nie :       <li class='weather'>
+nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/oblacno-n.gif' alt='oblačno'>
+nie :       </li>
+nie :       <li class='temp'>
+nie :         <span class='day'>-1°C</span>
+nie :       </li>
+nie :       <li class='info'>
+nie :         <p>oblačno
+nie :       </li>
+nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/s.gif' title='južný vietor' alt='S' width=16 height=16 align=absmiddle />&nbsp; 10 km/h</li>
+nie :       <li class='additional-info'>
+nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;0.0mm
+nie :       </li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;100%</li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;100%</li>
+nie :     </ul>
+nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
+nie :       <li class='date'>
+nie :         <div>07:00</div>
+nie :       </li>
+nie :       <li class='weather'>
+nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/oblacno-n.gif' alt='oblačno'>
+nie :       </li>
+nie :       <li class='temp'>
+nie :         <span class='day'>-1°C</span>
+nie :       </li>
+nie :       <li class='info'>
+nie :         <p>oblačno
+nie :       </li>
+nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/s.gif' title='južný vietor' alt='S' width=16 height=16 align=absmiddle />&nbsp; 13 km/h</li>
+nie :       <li class='additional-info'>
+nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;0.0mm
+nie :       </li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;100%</li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;100%</li>
+nie :     </ul>
+nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
+nie :       <li class='date'>
+nie :         <div>10:00</div>
+nie :       </li>
+nie :       <li class='weather'>
+nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/oblacno.gif' alt='oblačno'>
+nie :       </li>
+nie :       <li class='temp'>
+nie :         <span class='day'>-1°C</span>
+nie :       </li>
+nie :       <li class='info'>
+nie :         <p>oblačno
+nie :       </li>
+nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/s.gif' title='južný vietor' alt='S' width=16 height=16 align=absmiddle />&nbsp; 15 km/h</li>
+nie :       <li class='additional-info'>
+nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;0.0mm
+nie :       </li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;100%</li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;100%</li>
+nie :     </ul>
+nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
+nie :       <li class='date'>
+nie :         <div>13:00</div>
+nie :       </li>
+nie :       <li class='weather'>
+nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/oblacno.gif' alt='oblačno'>
+nie :       </li>
+nie :       <li class='temp'>
+nie :         <span class='day'>0°C</span>
+nie :       </li>
+nie :       <li class='info'>
+nie :         <p>oblačno
+nie :       </li>
+nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/s.gif' title='južný vietor' alt='S' width=16 height=16 align=absmiddle />&nbsp; 18 km/h</li>
+nie :       <li class='additional-info'>
+nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;0.1mm
+nie :       </li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;100%</li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;100%</li>
+nie :     </ul>
+nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
+nie :       <li class='date'>
+nie :         <div>16:00</div>
+nie :       </li>
+nie :       <li class='weather'>
+nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/oblacno-n.gif' alt='oblačno'>
+nie :       </li>
+nie :       <li class='temp'>
+nie :         <span class='day'>0°C</span>
+nie :       </li>
+nie :       <li class='info'>
+nie :         <p>oblačno
+nie :       </li>
+nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/s.gif' title='južný vietor' alt='S' width=16 height=16 align=absmiddle />&nbsp; 15 km/h</li>
+nie :       <li class='additional-info'>
+nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;0.0mm
+nie :       </li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;100%</li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;98%</li>
+nie :     </ul>
+nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
+nie :       <li class='date'>
+nie :         <div>19:00</div>
+nie :       </li>
+nie :       <li class='weather'>
+nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/oblacno-so-slabym-snezenim-n.gif' alt='oblačno so slabým snežením'>
+nie :       </li>
+nie :       <li class='temp'>
+nie :         <span class='day'>0°C</span>
+nie :       </li>
+nie :       <li class='info'>
+nie :         <p>oblačno so slabým snežením
+nie :       </li>
+nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/s.gif' title='južný vietor' alt='S' width=16 height=16 align=absmiddle />&nbsp; 15 km/h</li>
+nie :       <li class='additional-info'>
+nie :         <img src="//front.pocasie.sk/_imgs/v2m/snow16x16.png" align="absmiddle" title="množstvo napadnutého snehu" width=16 height=16 />&nbsp;0.1cm
+nie :       </li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;100%</li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;93%</li>
+nie :     </ul>
+nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
+nie :       <li class='date'>
+nie :         <div>22:00</div>
+nie :       </li>
+nie :       <li class='weather'>
+nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/snezenie-n.gif' alt='sneženie'>
+nie :       </li>
+nie :       <li class='temp'>
+nie :         <span class='day'>0°C</span>
+nie :       </li>
+nie :       <li class='info'>
+nie :         <p>sneženie
+nie :       </li>
+nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/s.gif' title='južný vietor' alt='S' width=16 height=16 align=absmiddle />&nbsp; 15 km/h</li>
+nie :       <li class='additional-info'>
+nie :         <img src="//front.pocasie.sk/_imgs/v2m/snow16x16.png" align="absmiddle" title="množstvo napadnutého snehu" width=16 height=16 />&nbsp;1.1cm
+nie :       </li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;100%</li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;97%</li>
+nie :     </ul>  
+nie :   
+nie :   <div class="mob-show" style="width:250px;margin:15px auto">
+nie : <div>&nbsp;</div>
+nie : <script type='text/javascript'>
+nie : GA_googleFillSlot("pocasie_mobile");
+nie : </script></div>
+nie : 
+nie : </div>    <div style="clear:both"></div>
+nie :     </div>
+nie :   </div>
+nie :   
+nie :   <div class="footer">
+nie :     <div class="logo" style="width:160px"></div>
+nie :     <a href="http://www.foreca.com"><img style="position:absolute; top:30px; left:860px;" src="//front.pocasie.sk/_imgs/lo/foreca.jpg" width="94" height="36" border="0" /></a>
+nie :     <div class="bottom-nav" style="margin-left:215px">
+nie :       <ul>
+nie :         <li><a href="/slovensko/">Slovensko</a></li>
+nie :         <li><a href="/europa/">Európa</a></li>
+nie :         <li><a href="/azia/">�?zia</a></li>
+nie :         <li><a href="/afrika/">Afrika</a></li>
+nie :         <li><a href="/severna-amerika/">Severná a stredná Amerika</a></li>
+nie :         <li><a href="/juzna-amerika/">Južná Amerika</a></li>
+nie :         <li><a href="/australia-a-oceania/">Austrália a Oceánia</a></li>
+nie :       </ul>
+nie :       <ul>
+nie :         <li>prevádzkovateľ stránok: Travel.Sk s.r.o. - <a href="/info/">Info, Kontakt</a></li>
+nie :       </ul>
+nie :     </div>
+nie :   </div>
+nie :   
+nie :   </div>
+nie : 
+nie : 
+nie : </body>
+nie : </html>
