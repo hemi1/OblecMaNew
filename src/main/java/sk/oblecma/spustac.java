@@ -62,7 +62,10 @@ public class spustac extends javax.swing.JFrame {
 
     private final OblecenieDao oblecenie = new DefaultOblecenieDao();
     private final UzivatelDao uzivatel = new DefaultUzivatelDao();
-
+    private ObuvDao obuvDao = ObuvDaoFactory.INSTANCE.dajObuvDao();
+   
+    private List<Obuv> obuvy = new ArrayList<>();
+    
     private final KategoriaDao kategoria = new DefaultKategoriaDao();
 
     private List<JRadioButton> spravcaKategorieAvailableButtons = new ArrayList();
@@ -72,7 +75,7 @@ public class spustac extends javax.swing.JFrame {
     private final OblecMa oblecMa = new OblecMa(pocasie, oblecenie, uzivatel, kategoria, odporucaneZakazaneKombinacie);
 
     private HistoriaDao historia = new DefaultHistoriaDao();
-    
+
     public static Long aktualneID = Uzivatel.globalUser;
     private boolean pridavanieKategorie;
     private Kategoria upravovanaKategoria;
@@ -84,49 +87,47 @@ public class spustac extends javax.swing.JFrame {
     private boolean prvePrihlasenie = true;
     private boolean ukoncenePrihlasovanie = false;
     private boolean odhlasovanie = false;
-    
+
     private final GridBagConstraints gbc;
-    
+
     private boolean graphic = true;
-    private Map<JButton,ViewOblecenie> oblecenieOdstranButttons = new HashMap();
-            
-     public void vykresli(Map<Oblecenie, ImageIcon> zoznamOblecenia) {
+    private Map<JButton, ViewOblecenie> oblecenieOdstranButttons = new HashMap();
+
+    public void vykresli(Map<Oblecenie, ImageIcon> zoznamOblecenia) {
         //int pocetStlpcov = 3;
         //int pocetRiadkov = zoznamOblecenia.keySet().size() / 3 + 1;
 
         int stlpec = 0;
         int riadok = 0;
-        
-        for(Component aktualny:  OblecenieGraphicViewPanel.getComponents())
-        {
+
+        for (Component aktualny : OblecenieGraphicViewPanel.getComponents()) {
             aktualny.setVisible(false);
         }
         oblecenieOdstranButttons.clear();
         for (Oblecenie aktualne : zoznamOblecenia.keySet()) {
-            
+
             gbc.gridx = stlpec;
             gbc.gridy = riadok;
-          //  gbc.anchor=NORTH;
+            //  gbc.anchor=NORTH;
             ViewOblecenie viewOblecenie = new ViewOblecenie(aktualne, zoznamOblecenia.get(aktualne));
-                    
+
             OblecenieGraphicViewPanel.add(viewOblecenie.getViewPanel(), gbc);
-            
-            JButton odstranovacie = viewOblecenie.odstranovacie();            
+
+            JButton odstranovacie = viewOblecenie.odstranovacie();
             OblecenieOdstranButtonListener listener = new OblecenieOdstranButtonListener();
-            listener.set(this,aktualne,oblecenie);
+            listener.set(this, aktualne, oblecenie);
             odstranovacie.addActionListener(listener);
-            
+
             JComboBox statusComboBox = viewOblecenie.returnStatusComboBox();
             OblecenieStatusComboListener listenerStatus = new OblecenieStatusComboListener();
-            listenerStatus.set(statusComboBox,this,aktualne,oblecenie);
+            listenerStatus.set(statusComboBox, this, aktualne, oblecenie);
             statusComboBox.addActionListener(listenerStatus);
-            
+
             JCheckBox poziciavanieCheckBox = viewOblecenie.returnPoziciavanieCheckBox();
             ObleceniePoziciavanieCheckListener listenerPozicaj = new ObleceniePoziciavanieCheckListener();
-            listenerPozicaj.set(poziciavanieCheckBox,this,aktualne,oblecenie);
+            listenerPozicaj.set(poziciavanieCheckBox, this, aktualne, oblecenie);
             poziciavanieCheckBox.addActionListener(listenerPozicaj);
-            
-            
+
             stlpec++;
 
             if (stlpec > 3) {
@@ -135,7 +136,8 @@ public class spustac extends javax.swing.JFrame {
             }
         }
     }
-      public ImageIcon resizeImageIcon(ImageIcon icon, int width, int height) {
+
+    public ImageIcon resizeImageIcon(ImageIcon icon, int width, int height) {
 
         Image img = icon.getImage();
         Image newImg = img.getScaledInstance(width, height, Image.SCALE_SMOOTH);
@@ -143,35 +145,34 @@ public class spustac extends javax.swing.JFrame {
         return new ImageIcon(newImg);
 
     }
-     private Map<Oblecenie, ImageIcon> skusobnyZoznam = new HashMap<>();
+    private Map<Oblecenie, ImageIcon> skusobnyZoznam = new HashMap<>();
+
     public spustac() {
 
         initComponents();
-        
+
         OblecenieGraphicViewPanel.setLayout(new GridBagLayout());
         this.gbc = new GridBagConstraints();
         this.gbc.insets = new Insets(5, 5, 5, 5);
-        
-        gbc.ipadx=1;
-        gbc.ipady=1;
-        gbc.gridheight=1;
-        gbc.gridwidth=1;
-        
+
+        gbc.ipadx = 1;
+        gbc.ipady = 1;
+        gbc.gridheight = 1;
+        gbc.gridwidth = 1;
+
         OblecenieListViewPanel.setVisible(!graphic);
         OblecenieGraphicScrollPane.setVisible(graphic);
         OblecenieGraphicViewPanel.setVisible(graphic);
-    //    OblecenieGraphicScrollPane.setSize(0,0);
+        //    OblecenieGraphicScrollPane.setSize(0,0);
         OblecenieGraphicScrollPane.setSize(OblecenieFrame.getMaximumSize());
-        
-        
-        if(graphic==false)
-        {
-      /*      OblecenieGraphicScrollPane.setEnabled(false);
+
+        if (graphic == false) {
+            /*      OblecenieGraphicScrollPane.setEnabled(false);
             OblecenieListViewPanel.setLocation(0,0);
-      */  }
-        
+             */        }
+
         List<Obrazok> ob = zoznamobrazkov.zistiData();
-        
+
         Calendar kalendar = new GregorianCalendar();
 
         List<LocalDate> datum = new ArrayList();
@@ -261,6 +262,10 @@ public class spustac extends javax.swing.JFrame {
         vietorLable = new javax.swing.JLabel();
         kombinacieButton = new javax.swing.JButton();
         historiaButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        obujMaButton2 = new javax.swing.JButton();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        obujMaList = new javax.swing.JList<>();
         VyberObrazkaChooserFrame = new javax.swing.JFrame();
         VyberObrazkaPreOblecenieChooser = new javax.swing.JFileChooser();
         registraciaFrame = new javax.swing.JFrame();
@@ -346,6 +351,21 @@ public class spustac extends javax.swing.JFrame {
         jScrollPane8 = new javax.swing.JScrollPane();
         historiaOblecenieKombinacieList = new javax.swing.JList();
         jPanel1 = new javax.swing.JPanel();
+        ObuvFrame = new javax.swing.JFrame();
+        pridajObuvButton = new javax.swing.JButton();
+        odstranObuvButton = new javax.swing.JButton();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        obuvList = new javax.swing.JList<>();
+        obuvLableZateplene = new javax.swing.JLabel();
+        obuvLableNepremokave = new javax.swing.JLabel();
+        vetraneLable = new javax.swing.JLabel();
+        pridajObuvFrame = new javax.swing.JFrame();
+        nazovObuvyText = new javax.swing.JTextField();
+        obuvNepremokaveCheckBox1 = new javax.swing.JCheckBox();
+        obuvZatepleneCheckBox2 = new javax.swing.JCheckBox();
+        vetraneCheckBox3 = new javax.swing.JCheckBox();
+        pridajObuvButtonObuvFrame = new javax.swing.JButton();
+        zrusitObuvFrameButton = new javax.swing.JButton();
         prihlasmenofield = new javax.swing.JTextField();
         prihlasheslofield = new javax.swing.JTextField();
         prihlasovanieReportLabel = new javax.swing.JLabel();
@@ -665,18 +685,42 @@ public class spustac extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Obuv");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        obujMaButton2.setText("Obuj Ma!");
+
+        obujMaList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane10.setViewportView(obujMaList);
+
         javax.swing.GroupLayout HlavneMenuFrameLayout = new javax.swing.GroupLayout(HlavneMenuFrame.getContentPane());
         HlavneMenuFrame.getContentPane().setLayout(HlavneMenuFrameLayout);
         HlavneMenuFrameLayout.setHorizontalGroup(
             HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HlavneMenuFrameLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(odhlasButton)
-                    .addComponent(stavPocasiaLabel)
-                    .addComponent(stupneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(vietorLable))
-                .addGap(36, 36, 36)
+                    .addGroup(HlavneMenuFrameLayout.createSequentialGroup()
+                        .addContainerGap(19, Short.MAX_VALUE)
+                        .addGroup(HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(odhlasButton)
+                            .addComponent(stavPocasiaLabel)
+                            .addComponent(stupneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(vietorLable))
+                        .addGap(36, 36, 36))
+                    .addGroup(HlavneMenuFrameLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ZakazKombinaciuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(OdporucKombinaciuButton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(obleciemSiToButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lokaciaPreZistovaniePocasia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -693,45 +737,50 @@ public class spustac extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(ZakazKombinaciuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(OdporucKombinaciuButton))
-                    .addComponent(hlavneMenuOblecenieButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(hlavneMenuOblecenieButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(obujMaButton2)
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         HlavneMenuFrameLayout.setVerticalGroup(
             HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HlavneMenuFrameLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(hlavneMenuOblecenieButton)
-                    .addComponent(odhlasButton)
-                    .addComponent(kombinacieButton)
-                    .addComponent(historiaButton))
-                .addGap(23, 23, 23)
-                .addComponent(lokaciaPreZistovaniePocasia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(oblecMaButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(HlavneMenuFrameLayout.createSequentialGroup()
-                        .addGroup(HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(HlavneMenuFrameLayout.createSequentialGroup()
-                                .addComponent(stupneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(stavPocasiaLabel)
-                                .addGap(10, 10, 10)
-                                .addComponent(vietorLable)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(obleciemSiToButton)
-                        .addGap(12, 12, 12)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HlavneMenuFrameLayout.createSequentialGroup()
                         .addGroup(HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(zmenOznaceneButton)
-                            .addComponent(DalsiaKombinaciaButton)))
+                            .addComponent(hlavneMenuOblecenieButton)
+                            .addComponent(odhlasButton)
+                            .addComponent(kombinacieButton)
+                            .addComponent(historiaButton))
+                        .addGap(23, 23, 23)
+                        .addComponent(lokaciaPreZistovaniePocasia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(oblecMaButton)
+                    .addComponent(obujMaButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane10)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                     .addGroup(HlavneMenuFrameLayout.createSequentialGroup()
+                        .addComponent(stupneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(stavPocasiaLabel)
+                        .addGap(10, 10, 10)
+                        .addComponent(vietorLable)
+                        .addGap(22, 22, 22)
                         .addComponent(OdporucKombinaciuButton)
-                        .addGap(58, 58, 58)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(ZakazKombinaciuButton)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(obleciemSiToButton)
+                .addGap(12, 12, 12)
+                .addGroup(HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(zmenOznaceneButton)
+                    .addComponent(DalsiaKombinaciaButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1501,6 +1550,138 @@ public class spustac extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        pridajObuvButton.setText("Pridaj");
+        pridajObuvButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pridajObuvButtonActionPerformed(evt);
+            }
+        });
+
+        odstranObuvButton.setText("Odstran");
+        odstranObuvButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odstranObuvButtonActionPerformed(evt);
+            }
+        });
+
+        obuvList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane9.setViewportView(obuvList);
+
+        obuvLableZateplene.setText("zateplene");
+
+        obuvLableNepremokave.setText("nepremokave");
+
+        vetraneLable.setText("vetrane");
+
+        javax.swing.GroupLayout ObuvFrameLayout = new javax.swing.GroupLayout(ObuvFrame.getContentPane());
+        ObuvFrame.getContentPane().setLayout(ObuvFrameLayout);
+        ObuvFrameLayout.setHorizontalGroup(
+            ObuvFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ObuvFrameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ObuvFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(odstranObuvButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(obuvLableZateplene)
+                    .addComponent(obuvLableNepremokave)
+                    .addComponent(vetraneLable)
+                    .addComponent(pridajObuvButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        ObuvFrameLayout.setVerticalGroup(
+            ObuvFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ObuvFrameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ObuvFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(ObuvFrameLayout.createSequentialGroup()
+                        .addComponent(pridajObuvButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(odstranObuvButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(obuvLableZateplene))
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(obuvLableNepremokave)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(vetraneLable)
+                .addContainerGap(57, Short.MAX_VALUE))
+        );
+
+        nazovObuvyText.setText("nazov obuvy");
+        nazovObuvyText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nazovObuvyTextActionPerformed(evt);
+            }
+        });
+
+        obuvNepremokaveCheckBox1.setText("nepremokave");
+        obuvNepremokaveCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obuvNepremokaveCheckBox1ActionPerformed(evt);
+            }
+        });
+
+        obuvZatepleneCheckBox2.setText("zateplene");
+
+        vetraneCheckBox3.setText("vetrane");
+
+        pridajObuvButtonObuvFrame.setText("Pridaj");
+        pridajObuvButtonObuvFrame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pridajObuvButtonObuvFrameActionPerformed(evt);
+            }
+        });
+
+        zrusitObuvFrameButton.setText("Zrusit");
+        zrusitObuvFrameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zrusitObuvFrameButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pridajObuvFrameLayout = new javax.swing.GroupLayout(pridajObuvFrame.getContentPane());
+        pridajObuvFrame.getContentPane().setLayout(pridajObuvFrameLayout);
+        pridajObuvFrameLayout.setHorizontalGroup(
+            pridajObuvFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pridajObuvFrameLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(pridajObuvFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nazovObuvyText, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pridajObuvFrameLayout.createSequentialGroup()
+                        .addComponent(pridajObuvButtonObuvFrame)
+                        .addGap(26, 26, 26)
+                        .addComponent(zrusitObuvFrameButton)))
+                .addGap(18, 18, 18)
+                .addGroup(pridajObuvFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(vetraneCheckBox3)
+                    .addComponent(obuvZatepleneCheckBox2)
+                    .addComponent(obuvNepremokaveCheckBox1))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        pridajObuvFrameLayout.setVerticalGroup(
+            pridajObuvFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pridajObuvFrameLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(pridajObuvFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nazovObuvyText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(obuvNepremokaveCheckBox1))
+                .addGap(18, 18, 18)
+                .addGroup(pridajObuvFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pridajObuvFrameLayout.createSequentialGroup()
+                        .addComponent(obuvZatepleneCheckBox2)
+                        .addGap(18, 18, 18)
+                        .addComponent(vetraneCheckBox3))
+                    .addGroup(pridajObuvFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(pridajObuvButtonObuvFrame)
+                        .addComponent(zrusitObuvFrameButton)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Prihlasenie");
 
@@ -2216,14 +2397,12 @@ public class spustac extends javax.swing.JFrame {
             odporuceneKombinacieList.clearSelection();
             refreshKombinacieList();
             refreshKombinacieInfo();
-        } else {
-            if (zakazaneKombinacieList.isSelectionEmpty() == false) {
-                KombinaciaANG oznacenaKombinacia = (KombinaciaANG) zakazaneKombinacieList.getSelectedValue();
-                odporucaneZakazaneKombinacie.odstranZakazanu(oznacenaKombinacia.getId());
-                zakazaneKombinacieList.clearSelection();
-                refreshKombinacieList();
-                refreshKombinacieInfo();
-            }
+        } else if (zakazaneKombinacieList.isSelectionEmpty() == false) {
+            KombinaciaANG oznacenaKombinacia = (KombinaciaANG) zakazaneKombinacieList.getSelectedValue();
+            odporucaneZakazaneKombinacie.odstranZakazanu(oznacenaKombinacia.getId());
+            zakazaneKombinacieList.clearSelection();
+            refreshKombinacieList();
+            refreshKombinacieInfo();
         }
     }//GEN-LAST:event_odoberZoZoznamuOdporucaneZakazaneButtonActionPerformed
 
@@ -2355,29 +2534,28 @@ public class spustac extends javax.swing.JFrame {
     }//GEN-LAST:event_oblecMaButtonActionPerformed
 
     private void hlavneMenuOblecenieButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hlavneMenuOblecenieButtonActionPerformed
-          
-        if(graphic)
-        {
+
+        if (graphic) {
             zobrazObleceniePodlaKategorie(zobrazOblecenieKategoriaCombo.getSelectedItem().toString());
-                 
+
         }
-          
-      /*  
+
+        /*  
         int x=5000;
         int y=5000;
-       */ 
+         */
 
-    /*    OblecenieGraphicScrollPane.setSize(x,y);
+ /*    OblecenieGraphicScrollPane.setSize(x,y);
         OblecenieGraphicScrollPane.setSize(x, y);
         OblecenieGraphicScrollPane.getLayout().minimumLayoutSize(OblecenieGraphicScrollPane);
         OblecenieGraphicViewPanel.setSize(x,y);
-  */
-           OblecenieFrame.setVisible(true);
-     //   OblecenieFrame.setAlwaysOnTop(true);
+         */
+        OblecenieFrame.setVisible(true);
+        //   OblecenieFrame.setAlwaysOnTop(true);
         OblecenieFrame.setSize(OblecenieFrame.getMaximumSize());
         //      OblecenieFrame.validate();
-      //  OblecenieFrame.pack();
-           
+        //  OblecenieFrame.pack();
+
     }//GEN-LAST:event_hlavneMenuOblecenieButtonActionPerformed
 
     private void odhlasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odhlasButtonActionPerformed
@@ -2385,7 +2563,7 @@ public class spustac extends javax.swing.JFrame {
     }//GEN-LAST:event_odhlasButtonActionPerformed
 
     private void historiaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historiaButtonActionPerformed
-        
+
         List<Kombinacia> celaHistoria = historia.vratCeluHistoriu();
         List<Kombinacia> dnesHistoria = historia.vratKombinacieZoDna(LocalDate.now());
         historiaObleceneKombinacieList.setListData(dnesHistoria.toArray());
@@ -2433,6 +2611,68 @@ public class spustac extends javax.swing.JFrame {
     private void obleceniePresunNoseneStareButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obleceniePresunNoseneStareButtonActionPerformed
         zmenNosenie(obleceniePresunNoseneStareButton);
     }//GEN-LAST:event_obleceniePresunNoseneStareButtonActionPerformed
+    private void refreshObuv() {
+        obuvList.setListData((String[]) obuvy.toArray());
+    }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ObuvFrame.setVisible(true);
+        ObuvFrame.setAlwaysOnTop(true);
+        ObuvFrame.pack();
+        nepremokneLabel.setVisible(false);
+        zatepleneLabel.setVisible(false);
+        vetraneLable.setVisible(false);
+        obuvy.addAll(obuvDao.dajVsetkyObuvy());
+        refreshObuv();
+        if (obuvList.isCursorSet()) {
+            for (Obuv obuv : obuvy) {
+                if (obuv.getNazov().equalsIgnoreCase(obuvList.getName())) {
+                    nepremokneLabel.setVisible(obuv.isNepremokave());
+                }
+                zatepleneLabel.setVisible(obuv.isZateplene());
+                vetraneLable.setVisible(obuv.isVetrane());
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void pridajObuvButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pridajObuvButtonActionPerformed
+        pridajObuvFrame.setVisible(true);
+        pridajObuvFrame.setAlwaysOnTop(true);
+        pridajObuvFrame.pack();
+        refreshObuv();
+        obuvNepremokaveCheckBox1.setSelected(false);
+        obuvZatepleneCheckBox2.setSelected(false);
+        vetraneCheckBox3.setSelected(false);
+    }//GEN-LAST:event_pridajObuvButtonActionPerformed
+
+    private void odstranObuvButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odstranObuvButtonActionPerformed
+        obuvy.remove(obuvList.getSelectedIndex());
+        refreshObuv();
+    }//GEN-LAST:event_odstranObuvButtonActionPerformed
+
+    private void nazovObuvyTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nazovObuvyTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nazovObuvyTextActionPerformed
+
+    private void zrusitObuvFrameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zrusitObuvFrameButtonActionPerformed
+        pridajObuvFrame.setVisible(false);
+        pridajObuvFrame.setAlwaysOnTop(false);
+    }//GEN-LAST:event_zrusitObuvFrameButtonActionPerformed
+
+    private void pridajObuvButtonObuvFrameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pridajObuvButtonObuvFrameActionPerformed
+        Obuv novaObuv = new Obuv();
+        novaObuv.setNazov(nazovObuvyText.getText());
+        novaObuv.setNepremokave(obuvNepremokaveCheckBox1.isSelected());
+        novaObuv.setZateplene(obuvZatepleneCheckBox2.isSelected());
+        novaObuv.setVetrane(vetraneCheckBox3.isSelected());
+        obuvDao.pridajObuv(novaObuv, aktualneID);
+        pridajObuvFrame.setVisible(false);
+        pridajObuvFrame.setAlwaysOnTop(false);
+        refreshObuv();
+    }//GEN-LAST:event_pridajObuvButtonObuvFrameActionPerformed
+
+    private void obuvNepremokaveCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obuvNepremokaveCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_obuvNepremokaveCheckBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2483,6 +2723,7 @@ public class spustac extends javax.swing.JFrame {
     private javax.swing.JPanel OblecenieListViewPanel;
     private javax.swing.JPanel OblecenieViewPanel;
     private javax.swing.JLabel ObrazokVybranehoObleceniaLabel;
+    private javax.swing.JFrame ObuvFrame;
     private javax.swing.JButton OdporucKombinaciuButton;
     private javax.swing.JDialog PridatKategoriuDialog;
     private javax.swing.JFrame SpravcaKategoriiForm;
@@ -2498,8 +2739,10 @@ public class spustac extends javax.swing.JFrame {
     private javax.swing.JList historiaObleceneKombinacieList;
     private javax.swing.JList historiaOblecenieKombinacieList;
     private javax.swing.JButton hlavneMenuOblecenieButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -2507,6 +2750,7 @@ public class spustac extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JLabel kategoriaLabel;
     private javax.swing.ButtonGroup kategorieButtonGroup;
     private javax.swing.JButton kombinacieButton;
@@ -2520,6 +2764,7 @@ public class spustac extends javax.swing.JFrame {
     private javax.swing.JLabel nazovKategorieLabel;
     private javax.swing.JTextField nazovKategorieTextField;
     private javax.swing.JLabel nazovObleceniaLabel;
+    private javax.swing.JTextField nazovObuvyText;
     private javax.swing.JLabel nazovPridatKategoriuLabel;
     private javax.swing.JTextField nazovPridatKategoriuTextField;
     private javax.swing.JLabel neprefukaLabel;
@@ -2544,6 +2789,13 @@ public class spustac extends javax.swing.JFrame {
     private javax.swing.JList obleceniePranieList;
     private javax.swing.JButton obleceniePresunNoseneStareButton;
     private javax.swing.JButton obleciemSiToButton;
+    private javax.swing.JButton obujMaButton2;
+    private javax.swing.JList<String> obujMaList;
+    private javax.swing.JLabel obuvLableNepremokave;
+    private javax.swing.JLabel obuvLableZateplene;
+    private javax.swing.JList<String> obuvList;
+    private javax.swing.JCheckBox obuvNepremokaveCheckBox1;
+    private javax.swing.JCheckBox obuvZatepleneCheckBox2;
     private javax.swing.JButton odhlasButton;
     private javax.swing.JButton odoberOblecenieButton;
     private javax.swing.JButton odoberZoZoznamuOdporucaneZakazaneButton;
@@ -2551,6 +2803,7 @@ public class spustac extends javax.swing.JFrame {
     private javax.swing.JButton odporucaneNaZakazaneButton;
     private javax.swing.JLabel odporuceneKombinacieLable;
     private javax.swing.JList odporuceneKombinacieList;
+    private javax.swing.JButton odstranObuvButton;
     private javax.swing.JButton okButton;
     private javax.swing.JButton okPridatKategoriuButton;
     private javax.swing.JButton okUpravitButtno;
@@ -2560,6 +2813,9 @@ public class spustac extends javax.swing.JFrame {
     private javax.swing.JComboBox pranieComboBox;
     private javax.swing.JLabel pranieLabel;
     private javax.swing.JButton pridajNoveOblecenieButton;
+    private javax.swing.JButton pridajObuvButton;
+    private javax.swing.JButton pridajObuvButtonObuvFrame;
+    private javax.swing.JFrame pridajObuvFrame;
     private javax.swing.JButton pridatDoPraniaButton;
     private javax.swing.JButton pridatKategoriuButton;
     private javax.swing.JButton prihlasButton;
@@ -2585,6 +2841,8 @@ public class spustac extends javax.swing.JFrame {
     private javax.swing.JDialog upravKategoriuDialog;
     private javax.swing.JButton upravitKategoriuButton;
     private javax.swing.JLabel vPraniLabel;
+    private javax.swing.JCheckBox vetraneCheckBox3;
+    private javax.swing.JLabel vetraneLable;
     private javax.swing.JLabel vietorLable;
     private javax.swing.JLabel vietorPreKombinaciuLabel;
     private javax.swing.JComboBox vrstvaKategorieCombo;
@@ -2599,6 +2857,7 @@ public class spustac extends javax.swing.JFrame {
     private javax.swing.JButton zmenKategoriuButton;
     private javax.swing.JButton zmenOznaceneButton;
     private javax.swing.JComboBox zobrazOblecenieKategoriaCombo;
+    private javax.swing.JButton zrusitObuvFrameButton;
     private javax.swing.JButton zrusitPridatKategoriuButton;
     // End of variables declaration//GEN-END:variables
 
@@ -2655,7 +2914,7 @@ public class spustac extends javax.swing.JFrame {
                 nastavTextNosenieButton(obleceniePresunNoseneStareButton, null);
                 System.out.println("podarilo sa prihlasit");
                 registraciaFrame.setVisible(false);
-                historia.nastavUzivatela(aktualneID);              
+                historia.nastavUzivatela(aktualneID);
 
             } catch (NespravneMenoException ex) {
                 prihlasovanieReportLabel.setText("TAKE MENO NIE JE");
@@ -2701,7 +2960,7 @@ public class spustac extends javax.swing.JFrame {
             VyberObrazkaChooserFrame.setVisible(false);
             spravcaPraniaForm.setVisible(false);
             odhlasovanie = false;
-             aktualneID=null;
+            aktualneID = null;
         } catch (NieJePrihlasenyZiadenPouzivatelException ex) {
             prihlasovanieReportLabel.setText("NEMAM KOHO ODHLASIT");
         } catch (Exception ex) {
@@ -2761,9 +3020,8 @@ public class spustac extends javax.swing.JFrame {
         try {
             List<Oblecenie> dajVsetkyOblecenia = oblecenie.dajVsetkyOblecenia(uzivatel.vratIdPrihlasenehoPouzivatela());
             oblecenieList.setListData(dajVsetkyOblecenia.toArray());
-            if(graphic)
-            {
-                Map<Oblecenie,ImageIcon> mapa = vytvorMapuOblecenieObrazok(dajVsetkyOblecenia);
+            if (graphic) {
+                Map<Oblecenie, ImageIcon> mapa = vytvorMapuOblecenieObrazok(dajVsetkyOblecenia);
                 vykresli(mapa);
             }
         } catch (Exception ex) {
@@ -2775,12 +3033,11 @@ public class spustac extends javax.swing.JFrame {
     private void dajKategoriu(JList oblecenieList, Long kategoria) {
         try {
             List<Oblecenie> dajObleceniePodlaKategorie = oblecenie.dajObleceniePodlaKategorie(kategoria, uzivatel.vratIdPrihlasenehoPouzivatela());
-           oblecenieList.setListData(dajObleceniePodlaKategorie.toArray());
-            if(graphic)
-            {
-                Map<Oblecenie,ImageIcon> mapa = vytvorMapuOblecenieObrazok(dajObleceniePodlaKategorie);
+            oblecenieList.setListData(dajObleceniePodlaKategorie.toArray());
+            if (graphic) {
+                Map<Oblecenie, ImageIcon> mapa = vytvorMapuOblecenieObrazok(dajObleceniePodlaKategorie);
                 vykresli(mapa);
-            } 
+            }
         } catch (Exception ex) {
             Logger.getLogger(spustac.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2949,9 +3206,9 @@ public class spustac extends javax.swing.JFrame {
 
             novaKategoriaComboBox.addItem(nazov);
 
-          //  zobrazOblecenieKategoriaCombo.removeItem(kategoria.vratNazov(Kategoria.ineFinal, aktualneID));
+            //  zobrazOblecenieKategoriaCombo.removeItem(kategoria.vratNazov(Kategoria.ineFinal, aktualneID));
             zobrazOblecenieKategoriaCombo.addItem(nazov);
-          //  zobrazOblecenieKategoriaCombo.addItem(kategoria.vratNazov(Kategoria.ineFinal, aktualneID));
+            //  zobrazOblecenieKategoriaCombo.addItem(kategoria.vratNazov(Kategoria.ineFinal, aktualneID));
         } else if (odober) {
             noveOblecenieKategoriaCombo.removeItem(nazov);
             zobrazOblecenieKategoriaCombo.removeItem(nazov);
@@ -3048,12 +3305,10 @@ public class spustac extends javax.swing.JFrame {
             selectedValue.setMozeSaPoziciavat(true);
             oblecenie.upravOblecenie(selectedValue);
             nacitanieParametrovObleceinaDoLabelov();
-        } else {
-            if (!mozeSaPozicat.isSelected() && pozicaj) {
-                selectedValue.setMozeSaPoziciavat(false);
-                oblecenie.upravOblecenie(selectedValue);
-                nacitanieParametrovObleceinaDoLabelov();
-            }
+        } else if (!mozeSaPozicat.isSelected() && pozicaj) {
+            selectedValue.setMozeSaPoziciavat(false);
+            oblecenie.upravOblecenie(selectedValue);
+            nacitanieParametrovObleceinaDoLabelov();
         }
     }
 
@@ -3149,12 +3404,10 @@ public class spustac extends javax.swing.JFrame {
 
         if (mojePocasie.isDazd()) {
             stavPocasiaLabel.setText("prsi");
+        } else if (mojePocasie.isSneh()) {
+            stavPocasiaLabel.setText("snezi");
         } else {
-            if (mojePocasie.isSneh()) {
-                stavPocasiaLabel.setText("snezi");
-            } else {
-                stavPocasiaLabel.setText("bez zrazok");
-            }
+            stavPocasiaLabel.setText("bez zrazok");
         }
     }
 
@@ -3231,12 +3484,10 @@ public class spustac extends javax.swing.JFrame {
         }
         if (pocasiePreKombinaciu.isDazd()) {
             stavPocasiaPreKombinaciuLabel.setText("prsi");
+        } else if (pocasiePreKombinaciu.isSneh()) {
+            stavPocasiaPreKombinaciuLabel.setText("snezi");
         } else {
-            if (pocasiePreKombinaciu.isSneh()) {
-                stavPocasiaPreKombinaciuLabel.setText("snezi");
-            } else {
-                stavPocasiaPreKombinaciuLabel.setText("bez zrazok");
-            }
+            stavPocasiaPreKombinaciuLabel.setText("bez zrazok");
         }
     }
 
@@ -3285,17 +3536,13 @@ public class spustac extends javax.swing.JFrame {
         if (oznacene.isNove()) {
             oznacene.setNove(false);
             oznacene.setNosene(true);
-        } else {
-            if (oznacene.isNosene()) {
-                oznacene.setNosene(false);
-                oznacene.setStare(true);
-            } else {
-                if (oznacene.isStare()) {
-                    oznacene.setNosene(true);
-                    oznacene.setStare(false);
+        } else if (oznacene.isNosene()) {
+            oznacene.setNosene(false);
+            oznacene.setStare(true);
+        } else if (oznacene.isStare()) {
+            oznacene.setNosene(true);
+            oznacene.setStare(false);
 
-                }
-            }
         }
 
         oblecenie.upravOblecenie(oznacene);
@@ -3350,29 +3597,26 @@ public class spustac extends javax.swing.JFrame {
     }
 
     public Map<Oblecenie, ImageIcon> vytvorMapuOblecenieObrazok(List<Oblecenie> dajVsetkyOblecenia) {
-        Map<Oblecenie,ImageIcon> mapa = new HashMap<>();
-        
-        for(Oblecenie aktualne : dajVsetkyOblecenia)
-        {
-            if(aktualne==null)
-            {
+        Map<Oblecenie, ImageIcon> mapa = new HashMap<>();
+
+        for (Oblecenie aktualne : dajVsetkyOblecenia) {
+            if (aktualne == null) {
                 continue;
             }
-            mapa.put(aktualne,null);
+            mapa.put(aktualne, null);
             Long idObrazka = aktualne.getIdObrazka();
-            if(idObrazka==null)
-            {
+            if (idObrazka == null) {
                 continue;
-            }   
+            }
             for (Icon aktualna : icons) {
                 if (aktualna.getId() == idObrazka.intValue()) {
-              //      System.out.println(aktualna.getId() + " == " + idObrazka);
-                    mapa.put(aktualne,aktualna.getIcon());
+                    //      System.out.println(aktualna.getId() + " == " + idObrazka);
+                    mapa.put(aktualne, aktualna.getIcon());
                     break;
                 }
             }
         }
-        
+
         return mapa;
     }
 }

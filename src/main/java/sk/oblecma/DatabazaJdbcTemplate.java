@@ -21,8 +21,8 @@ public class DatabazaJdbcTemplate {
     public JdbcTemplate vratJdbcTemplate(String nazovDatabazy) {
         
      //  String databaseURL = "jdbc:mysql://localhost/nova";
-        String user = "a";
-        String password = "a";
+        String user = "root";
+        String password = "Rastislav1";
 
         MysqlDataSource dataSource = new MysqlDataSource();
         dataSource.setUser(user);
@@ -172,6 +172,15 @@ public class DatabazaJdbcTemplate {
         ");");
         jdbcTemplate.execute("ALTER TABLE KombinaciaHistoria AUTO_INCREMENT = 1;");
         
+         jdbcTemplate.update("create table if not exists obuv(\n" +
+        "idObuvy int primary key not null auto_increment,\n" +
+        "vlastnikID int,\n" +
+        "nazov varchar(50),\n" +
+        "nepremokave boolean,\n" +
+        "vetrane boolean,\n" +
+        "zateplene boolean\n"+
+        ");");
+        jdbcTemplate.execute("ALTER TABLE oblecenie AUTO_INCREMENT = 1;");
         }
 
         catch(DataAccessException e)

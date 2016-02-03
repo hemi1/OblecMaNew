@@ -348,14 +348,26 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="odhlasButton" min="-2" max="-2" attributes="0"/>
-                      <Component id="stavPocasiaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="stupneLabel" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="vietorLable" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace pref="19" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="odhlasButton" min="-2" max="-2" attributes="0"/>
+                              <Component id="stavPocasiaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="stupneLabel" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                              <Component id="vietorLable" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="ZakazKombinaciuButton" min="-2" pref="79" max="-2" attributes="0"/>
+                              <Component id="OdporucKombinaciuButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="obleciemSiToButton" max="32767" attributes="0"/>
                       <Component id="lokaciaPreZistovaniePocasia" max="32767" attributes="0"/>
@@ -375,12 +387,13 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="ZakazKombinaciuButton" max="32767" attributes="0"/>
-                          <Component id="OdporucKombinaciuButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="hlavneMenuOblecenieButton" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="hlavneMenuOblecenieButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="obujMaButton2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jScrollPane10" min="-2" pref="77" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="19" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -388,42 +401,46 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="hlavneMenuOblecenieButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="odhlasButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="kombinacieButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="historiaButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                  <Component id="lokaciaPreZistovaniePocasia" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="oblecMaButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane1" min="-2" pref="150" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Component id="stupneLabel" min="-2" pref="15" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="stavPocasiaLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                  <Component id="vietorLable" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="obleciemSiToButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="zmenOznaceneButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="DalsiaKombinaciaButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="hlavneMenuOblecenieButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="odhlasButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="kombinacieButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="historiaButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                          <Component id="lokaciaPreZistovaniePocasia" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="jButton1" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="oblecMaButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="obujMaButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jScrollPane10" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="150" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
+                          <Component id="stupneLabel" min="-2" pref="15" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="stavPocasiaLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <Component id="vietorLable" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                           <Component id="OdporucKombinaciuButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="ZakazKombinaciuButton" min="-2" max="-2" attributes="0"/>
                       </Group>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="obleciemSiToButton" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="zmenOznaceneButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="DalsiaKombinaciaButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -553,6 +570,44 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="historiaButtonActionPerformed"/>
           </Events>
         </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Obuv"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="obujMaButton2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Obuj Ma!"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane10">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JList" name="obujMaList">
+              <Properties>
+                <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                  <StringArray count="5">
+                    <StringItem index="0" value="Item 1"/>
+                    <StringItem index="1" value="Item 2"/>
+                    <StringItem index="2" value="Item 3"/>
+                    <StringItem index="3" value="Item 4"/>
+                    <StringItem index="4" value="Item 5"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="VyberObrazkaChooserFrame">
@@ -1721,6 +1776,203 @@
           </Group>
         </DimensionLayout>
       </Layout>
+    </Container>
+    <Container class="javax.swing.JFrame" name="ObuvFrame">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="odstranObuvButton" max="32767" attributes="0"/>
+                      <Component id="obuvLableZateplene" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="obuvLableNepremokave" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="vetraneLable" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="pridajObuvButton" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="35" max="32767" attributes="0"/>
+                  <Component id="jScrollPane9" min="-2" pref="214" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="pridajObuvButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="odstranObuvButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="obuvLableZateplene" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jScrollPane9" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="obuvLableNepremokave" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="vetraneLable" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="57" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="pridajObuvButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Pridaj"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pridajObuvButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="odstranObuvButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Odstran"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="odstranObuvButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane9">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JList" name="obuvList">
+              <Properties>
+                <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                  <StringArray count="5">
+                    <StringItem index="0" value="Item 1"/>
+                    <StringItem index="1" value="Item 2"/>
+                    <StringItem index="2" value="Item 3"/>
+                    <StringItem index="3" value="Item 4"/>
+                    <StringItem index="4" value="Item 5"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="obuvLableZateplene">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="zateplene"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="obuvLableNepremokave">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="nepremokave"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="vetraneLable">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="vetrane"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JFrame" name="pridajObuvFrame">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="nazovObuvyText" min="-2" pref="171" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="pridajObuvButtonObuvFrame" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="zrusitObuvFrameButton" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="vetraneCheckBox3" min="-2" max="-2" attributes="0"/>
+                      <Component id="obuvZatepleneCheckBox2" min="-2" max="-2" attributes="0"/>
+                      <Component id="obuvNepremokaveCheckBox1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="nazovObuvyText" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="obuvNepremokaveCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="obuvZatepleneCheckBox2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="vetraneCheckBox3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="pridajObuvButtonObuvFrame" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="zrusitObuvFrameButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JTextField" name="nazovObuvyText">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="nazov obuvy"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nazovObuvyTextActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="obuvNepremokaveCheckBox1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="nepremokave"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="obuvNepremokaveCheckBox1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="obuvZatepleneCheckBox2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="zateplene"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="vetraneCheckBox3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="vetrane"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="pridajObuvButtonObuvFrame">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Pridaj"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pridajObuvButtonObuvFrameActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="zrusitObuvFrameButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Zrusit"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="zrusitObuvFrameButtonActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
     </Container>
   </NonVisualComponents>
   <Properties>
