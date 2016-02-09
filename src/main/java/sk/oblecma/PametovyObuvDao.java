@@ -34,11 +34,13 @@ public class PametovyObuvDao implements ObuvDao{
         
         for(Obuv aktualne : obuv)
         {
-            if(idObuvy.equals(aktualne.getIdObuvy()))
+            int idObuv= Math.toIntExact(aktualne.getIdObuvy());
+            if(idObuvy == idObuv)
             {
                 if(aktualne.getVlastnikID().equals(ID))
-                vymaz = aktualne;
+                    vymaz = aktualne;
                 break;
+            } else {
             }
         }
         if(vymaz!=null)

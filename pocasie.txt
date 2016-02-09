@@ -413,62 +413,62 @@ nie :       $(function () {
 nie :         
 nie :         // generate a dataset
 nie :         var d2 = [];
-nie : d2.push([1454508000000,0.1]);
-nie : d2.push([1454511600000,0.1]);
-nie : d2.push([1454515200000,0.1]);
-nie : d2.push([1454518800000,0.3]);
-nie : d2.push([1454522400000,0.3]);
-nie : d2.push([1454526000000,0.3]);
-nie : d2.push([1454529600000,0.7]);
-nie : d2.push([1454533200000,0.7]);
-nie : d2.push([1454536800000,0.7]);
-nie : d2.push([1454540400000,0.2]);
-nie : d2.push([1454544000000,0.2]);
-nie : d2.push([1454547600000,0.2]);
-nie : d2.push([1454551200000,0.0]);
-nie : d2.push([1454554800000,0.0]);
-nie : d2.push([1454558400000,0.0]);
-nie : d2.push([1454562000000,0.0]);
-nie : d2.push([1454565600000,0.0]);
-nie : d2.push([1454569200000,0.0]);
+nie : d2.push([1455051600000,0.4]);
+nie : d2.push([1455055200000,0.4]);
+nie : d2.push([1455058800000,0.5]);
+nie : d2.push([1455062400000,0.5]);
+nie : d2.push([1455066000000,0.5]);
+nie : d2.push([1455069600000,0.0]);
+nie : d2.push([1455073200000,0.0]);
+nie : d2.push([1455076800000,0.0]);
+nie : d2.push([1455080400000,0.3]);
+nie : d2.push([1455084000000,0.3]);
+nie : d2.push([1455087600000,0.3]);
+nie : d2.push([1455091200000,2.1]);
+nie : d2.push([1455094800000,2.1]);
+nie : d2.push([1455098400000,2.1]);
+nie : d2.push([1455102000000,2.3]);
+nie : d2.push([1455105600000,2.3]);
+nie : d2.push([1455109200000,2.3]);
+nie : d2.push([1455112800000,2.3]);
 nie : var d2 = [];
-nie : d2.push([1454508000000,0.1]);
-nie : d2.push([1454511600000,0.1]);
-nie : d2.push([1454515200000,0.1]);
-nie : d2.push([1454518800000,0.3]);
-nie : d2.push([1454522400000,0.3]);
-nie : d2.push([1454526000000,0.3]);
-nie : d2.push([1454529600000,0.7]);
-nie : d2.push([1454533200000,0.7]);
-nie : d2.push([1454536800000,0.7]);
-nie : d2.push([1454540400000,0.2]);
-nie : d2.push([1454544000000,0.2]);
-nie : d2.push([1454547600000,0.2]);
-nie : d2.push([1454551200000,0.0]);
-nie : d2.push([1454554800000,0.0]);
-nie : d2.push([1454558400000,0.0]);
-nie : d2.push([1454562000000,0.0]);
-nie : d2.push([1454565600000,0.0]);
-nie : d2.push([1454569200000,0.0]);
+nie : d2.push([1455051600000,0.4]);
+nie : d2.push([1455055200000,0.4]);
+nie : d2.push([1455058800000,0.5]);
+nie : d2.push([1455062400000,0.5]);
+nie : d2.push([1455066000000,0.5]);
+nie : d2.push([1455069600000,0.0]);
+nie : d2.push([1455073200000,0.0]);
+nie : d2.push([1455076800000,0.0]);
+nie : d2.push([1455080400000,0.3]);
+nie : d2.push([1455084000000,0.3]);
+nie : d2.push([1455087600000,0.3]);
+nie : d2.push([1455091200000,2.1]);
+nie : d2.push([1455094800000,2.1]);
+nie : d2.push([1455098400000,2.1]);
+nie : d2.push([1455102000000,2.3]);
+nie : d2.push([1455105600000,2.3]);
+nie : d2.push([1455109200000,2.3]);
+nie : d2.push([1455112800000,2.3]);
 nie : var d1 = [];
-nie : d1.push([1454508000000,5]);
-nie : d1.push([1454511600000,5]);
-nie : d1.push([1454515200000,5]);
-nie : d1.push([1454518800000,5]);
-nie : d1.push([1454522400000,4]);
-nie : d1.push([1454526000000,4]);
-nie : d1.push([1454529600000,4]);
-nie : d1.push([1454533200000,4]);
-nie : d1.push([1454536800000,4]);
-nie : d1.push([1454540400000,3]);
-nie : d1.push([1454544000000,3]);
-nie : d1.push([1454547600000,2]);
-nie : d1.push([1454551200000,2]);
-nie : d1.push([1454554800000,2]);
-nie : d1.push([1454558400000,2]);
-nie : d1.push([1454562000000,2]);
-nie : d1.push([1454565600000,1]);
-nie : d1.push([1454569200000,1]);
+nie : d1.push([1455051600000,7]);
+nie : d1.push([1455055200000,8]);
+nie : d1.push([1455058800000,7]);
+nie : d1.push([1455062400000,7]);
+nie : d1.push([1455066000000,7]);
+nie : d1.push([1455069600000,6]);
+nie : d1.push([1455073200000,6]);
+nie : d1.push([1455076800000,6]);
+nie : d1.push([1455080400000,6]);
+nie : d1.push([1455084000000,6]);
+nie : d1.push([1455087600000,6]);
+nie : d1.push([1455091200000,6]);
+nie : d1.push([1455094800000,6]);
+nie : d1.push([1455098400000,7]);
+nie : d1.push([1455102000000,7]);
+nie : d1.push([1455105600000,6]);
+nie : d1.push([1455109200000,6]);
+nie : d1.push([1455112800000,6]);
 nie : 
 nie :           
 nie :           
@@ -508,60 +508,60 @@ nie :             }
 nie :           }
 nie :         }  
 nie :         
-nie :         var plot = $.plot(placeholder, [{data:d2,bars:{show:true,barWidth:2000000,fill:0.9,align:'center'},yaxis:2,label:'\u00dahrn zr\u00e1\u017eok',color:'#239BE7'},{data:d1,lines:{show:true},yaxis:1,label:'Teplota',color:'#323232'}],{grid:{markings:[{color:'#f6f6f6',xaxis:{from:1454482920000,to:1454517300000}},{color:'#f6f6f6',xaxis:{from:1454569260000,to:1454603820000}}],backgroundColor:'#C5C5C5',borderWidth:1,borderColor:'#C5C5C5'},legend:{backgroundOpacity:0},xaxes:[{mode:'time',timeformat:'%d.%m.<br>%H:%M',ticks:[1454511600000,1454518800000,1454526000000,1454533200000,1454540400000,1454547600000,1454554800000,1454562000000]}],yaxes:[{min:-4,max:10,tickFormatter:celsiusFormatter},{min:0.1,max:2,position:'right',tickFormatter:precipFormatter}]});
+nie :         var plot = $.plot(placeholder, [{data:d2,bars:{show:true,barWidth:2000000,fill:0.9,align:'center'},yaxis:2,label:'\u00dahrn zr\u00e1\u017eok',color:'#239BE7'},{data:d1,lines:{show:true},yaxis:1,label:'Teplota',color:'#323232'}],{grid:{markings:[{color:'#f6f6f6',xaxis:{from:1455000780000,to:1455036300000}},{color:'#f6f6f6',xaxis:{from:1455087120000,to:1455122820000}}],backgroundColor:'#C5C5C5',borderWidth:1,borderColor:'#C5C5C5'},legend:{backgroundOpacity:0},xaxes:[{mode:'time',timeformat:'%d.%m.<br>%H:%M',ticks:[1455055200000,1455062400000,1455069600000,1455076800000,1455084000000,1455091200000,1455098400000,1455105600000]}],yaxes:[{min:1,max:13,tickFormatter:celsiusFormatter},{min:0.1,max:3,position:'right',tickFormatter:precipFormatter}]});
 nie :         
 nie :         // add labels
-nie :         var o;o = plot.pointOffset({x: 1454511600000 , y:5});
-nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/mrholenie.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
-nie : o = plot.pointOffset({x: 1454518800000 , y:5});
+nie :         var o;o = plot.pointOffset({x: 1455055200000 , y:8});
+nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/prevazne-oblacno-s-prehankami-n.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
+nie : o = plot.pointOffset({x: 1455062400000 , y:7});
+nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/prevazne-oblacno-s-prehankami-n.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
+nie : o = plot.pointOffset({x: 1455069600000 , y:6});
+nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/prevazne-oblacno-n.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
+nie : o = plot.pointOffset({x: 1455076800000 , y:6});
+nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/prevazne-oblacno-n.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
+nie : o = plot.pointOffset({x: 1455084000000 , y:6});
 nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/oblacno-s-prehankami-n.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
-nie : o = plot.pointOffset({x: 1454526000000 , y:4});
-nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/oblacno-s-prehankami-n.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
-nie : o = plot.pointOffset({x: 1454533200000 , y:4});
-nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/dazd-n.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
-nie : o = plot.pointOffset({x: 1454540400000 , y:3});
-nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/oblacno-s-mrholenim-a-snehovymi-prehankami-n.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
-nie : o = plot.pointOffset({x: 1454547600000 , y:2});
-nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/oblacno-s-mrholenim-a-snehovymi-prehankami-n.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
-nie : o = plot.pointOffset({x: 1454554800000 , y:2});
-nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/oblacno-n.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
-nie : o = plot.pointOffset({x: 1454562000000 , y:2});
-nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/polooblacno-n.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
+nie : o = plot.pointOffset({x: 1455091200000 , y:6});
+nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/dazd.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
+nie : o = plot.pointOffset({x: 1455098400000 , y:7});
+nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/dazd.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
+nie : o = plot.pointOffset({x: 1455105600000 , y:6});
+nie : placeholder.append('<img src="//front.pocasie.sk/_imgs/f22x22/dazd.png" style="position:absolute;left:'+(o.left-11)+'px;top:'+(o.top-25)+'px;" width=22 height=22>');
 nie :   
 nie :         
 nie :     });
 nie :     </script>  <div class="current-weather">
 nie :     <table cellpadding=2 cellspacing=0 border=0>
 nie :       <tr>
-nie :         <td colspan="5" class="updated">Aktualizované: Streda, 3.2.2016 12:00</td>
+nie :         <td colspan="5" class="updated">Aktualizované: Utorok, 9.2.2016 19:00</td>
 nie :       </tr>
 nie :       <tr>
 nie :         <td rowspan="2">
-nie :                     <img src="//front.pocasie.sk/_imgs/f60x60/prevazne-oblacno.gif" width=60 height=60 border=0 alt="prevažne oblačno">
+nie :                     <img src="//front.pocasie.sk/_imgs/f60x60/prevazne-oblacno-n.gif" width=60 height=60 border=0 alt="prevažne oblačno">
 nie :                   </td>
 nie :         <td rowspan="2">
-nie :           <span class="curr-temp">6°C</span>
+nie :           <span class="curr-temp">9°C</span>
 nie :           <div class="updated">prevažne oblačno</div>
 nie :         </td>
 nie :         <td rowspan="2" valign=top style="padding:0px 30px">
-nie :                   </td>
+nie :           <img src='//front.pocasie.sk/_imgs/windsp36x36/s.gif' title='južný vietor' alt='S' width=36 height=36 align=absmiddle />&nbsp;25 km/h        </td>
 nie :         <td>
 nie :                       <img src="//front.pocasie.sk/_imgs/v2m/sunri36x36.gif" />
-nie :             <div>07:02</div>
+nie :             <div>06:53</div>
 nie :                   </td>
 nie :         <td>
 nie :                       <img src="//front.pocasie.sk/_imgs/v2m/sunse36x36.gif" />
-nie :             <div>16:35</div>
+nie :             <div>16:45</div>
 nie :                   </td>
 nie :       </tr>
 nie :       <tr>
 nie :         <td>
 nie :                       <img src="//front.pocasie.sk/_imgs/v2m/moonri36x36_2.gif" />
-nie :             <div>02:17</div>
+nie :             <div>07:07</div>
 nie :                   </td>
 nie :         <td>
 nie :                       <img src="//front.pocasie.sk/_imgs/v2m/moonse36x36_2.gif" />
-nie :             <div>11:56</div>
+nie :             <div>18:05</div>
 nie :                   </td>
 nie :       </tr>
 nie :     </table>
@@ -594,106 +594,66 @@ ZACIATOK
     <ul class='daily-forecast '>
       <li class='date'>
 TU
-        <div ><i>Dnes</i> - Streda<br><font size=6>3.</font><br>FEBRU�?R</div>
+        <div ><i>Dnes</i> - Utorok<br><font size=6>9.</font><br>FEBRU�?R</div>
       </li>
       <li class='weather'>
-        <img width=60 height=60 border=0 src='//front.pocasie.sk/_imgs/f60x60/oblacno-s-prehankami.gif' alt='oblačno s prehánkami' /><br>oblačno s prehánkami
+        <img width=60 height=60 border=0 src='//front.pocasie.sk/_imgs/f60x60/prevazne-oblacno-s-mrholenim.gif' alt='prevažne oblačno s mrholením' /><br>prevažne oblačno s mrholením
       </li>
       <li class='temp'>
 
- CEZ DEN 6 stupnov        <span class='day'>6°C</span><br /><span class='night'>0°C</span>
+ CEZ DEN 9 stupnov        <span class='day'>9°C</span><br /><span class='night'>5°C</span>
       </li>
       <li class='info'>
-        <p></p><p><i>Ráno a cez de�?</i>: mrholenie. Najvyššia teplota 5°C. Rýchlosť vetra 8 až&nbsp;10&nbsp;km/h. Predpokladaný úhrn zrážok 0.3&nbsp;mm<br /><i>Večer a v noci</i>: večer najskôr oblačno s prehánkami, neskôr v noci oblačno s mrholením a snehovými prehánkami. Najnižšia teplota 2°C. Rýchlosť vetra 0 až&nbsp;18&nbsp;km/h. Predpokladaný úhrn zrážok 3.6&nbsp;mm</p>
+        <p></p><p><i>Večer a v noci</i>: večer najskôr prevažne oblačno s prehánkami, neskôr v noci prevažne oblačno. Najnižšia teplota 6°C. Rýchlosť vetra 30 až&nbsp;40&nbsp;km/h. Predpokladaný úhrn zrážok 2.6&nbsp;mm</p>
       </li>
       <li class='additional-info'>
 
- VIETOR 10
-        <div><img src='//front.pocasie.sk/_imgs/windsp16x16/sw.gif' alt='SW' title='juhozápadný vietor' width=16 height=16 align=absmiddle />&nbsp; 10 km/h</div>
+ VIETOR 20
+        <div><img src='//front.pocasie.sk/_imgs/windsp16x16/s.gif' alt='S' title='južný vietor' width=16 height=16 align=absmiddle />&nbsp; 20 km/h</div>
 
- ZRAZKY 85
-        <div><img src="//front.pocasie.sk/_imgs/v2m/preciprob24x24.png" align="absmiddle" title="pravdepodobnosť zrážok" width=16 height=16 />&nbsp;85%</div>
+ ZRAZKY 46
+        <div><img src="//front.pocasie.sk/_imgs/v2m/preciprob24x24.png" align="absmiddle" title="pravdepodobnosť zrážok" width=16 height=16 />&nbsp;46%</div>
         <div><img src="//front.pocasie.sk/_imgs/v2m/uvi24x24.png" align="absmiddle" title="intenzita UV žiarenia" width=16 height=16 />&nbsp;slabá (1/18)</div>
         <div></div>
       </li>
 KONIEC
 nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
 nie :       <li class='date'>
-nie :         <div>16:00</div>
-nie :       </li>
-nie :       <li class='weather'>
-nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/oblacno.gif' alt='oblačno'>
-nie :       </li>
-nie :       <li class='temp'>
-nie :         <span class='day'>5°C</span>
-nie :       </li>
-nie :       <li class='info'>
-nie :         <p>oblačno
-nie :       </li>
-nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/sw.gif' title='juhozápadný vietor' alt='SW' width=16 height=16 align=absmiddle />&nbsp; 8 km/h</li>
-nie :       <li class='additional-info'>
-nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;0.0mm
-nie :       </li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;100%</li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;98%</li>
-nie :     </ul>
-nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
-nie :       <li class='date'>
-nie :         <div>19:00</div>
-nie :       </li>
-nie :       <li class='weather'>
-nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/oblacno-s-prehankami-n.gif' alt='oblačno s prehánkami'>
-nie :       </li>
-nie :       <li class='temp'>
-nie :         <span class='day'>4°C</span>
-nie :       </li>
-nie :       <li class='info'>
-nie :         <p>oblačno s prehánkami
-nie :       </li>
-nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/n.gif' title='severný vietor' alt='N' width=16 height=16 align=absmiddle />&nbsp; 3 km/h</li>
-nie :       <li class='additional-info'>
-nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;0.9mm
-nie :       </li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;100%</li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;100%</li>
-nie :     </ul>
-nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
-nie :       <li class='date'>
 nie :         <div>22:00</div>
 nie :       </li>
 nie :       <li class='weather'>
-nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/dazd-n.gif' alt='dážď'>
+nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/prevazne-oblacno-s-prehankami-n.gif' alt='prevažne oblačno s prehánkami'>
 nie :       </li>
 nie :       <li class='temp'>
-nie :         <span class='day'>4°C</span>
+nie :         <span class='day'>8°C</span>
 nie :       </li>
 nie :       <li class='info'>
-nie :         <p>dážď
+nie :         <p>prevažne oblačno s prehánkami
 nie :       </li>
-nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/n.gif' title='severný vietor' alt='N' width=16 height=16 align=absmiddle />&nbsp; 15 km/h</li>
+nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/s.gif' title='južný vietor' alt='S' width=16 height=16 align=absmiddle />&nbsp; 25 km/h</li>
 nie :       <li class='additional-info'>
-nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;3.7mm
+nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;1.2mm
 nie :       </li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;100%</li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;79%</li>
 nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;93%</li>
 nie :     </ul>
 ZACIATOK
     <ul class='daily-forecast '>
       <li class='date'>
-        <div ><i>Zajtra</i> - Štvrtok<br><font size=6>4.</font><br>FEBRU�?R</div>
+        <div ><i>Zajtra</i> - Streda<br><font size=6>10.</font><br>FEBRU�?R</div>
       </li>
       <li class='weather'>
-        <img width=60 height=60 border=0 src='//front.pocasie.sk/_imgs/f60x60/polooblacno.gif' alt='polooblačno' /><br>polooblačno
+        <img width=60 height=60 border=0 src='//front.pocasie.sk/_imgs/f60x60/dazd.gif' alt='dážď' /><br>dážď
       </li>
       <li class='temp'>
-        <span class='day'>4°C</span><br /><span class='night'>-3°C</span>
+        <span class='day'>7°C</span><br /><span class='night'>0°C</span>
       </li>
       <li class='info'>
-        <p></p><p><i>Ráno a cez de�?</i>: ráno najskôr oblačno, neskôr doobeda čiastočne oblačno. Najvyššia teplota 4°C. Rýchlosť vetra 0 až&nbsp;18&nbsp;km/h. Predpokladaný úhrn zrážok 0.3&nbsp;mm<br /><i>Večer a v noci</i>: večer najskôr čiastočne oblačno, neskôr v noci prevažne oblačno. Najnižšia teplota -2°C. Rýchlosť vetra 0 až&nbsp;10&nbsp;km/h</p>
+        <p><span style="color:#FF9903"></span></p><p><i>Ráno a cez de�?</i>: dážď. Najvyššia teplota 7°C. Rýchlosť vetra 18 až&nbsp;30&nbsp;km/h. <nobr><span style="color:#FF9903">Predpokladaný úhrn zrážok 20.7&nbsp;mm</span></nobr><br /><i>Večer a v noci</i>: večer najskôr dážď, neskôr v noci oblačno s prehánkami a snežením. Najnižšia teplota 1°C. Rýchlosť vetra 10 až&nbsp;23&nbsp;km/h. <nobr><span style="color:#FF9903">Predpokladaný úhrn zrážok 10.8&nbsp;mm</span></nobr></p>
       </li>
       <li class='additional-info'>
-        <div><img src='//front.pocasie.sk/_imgs/windsp16x16/n.gif' alt='N' title='severný vietor' width=16 height=16 align=absmiddle />&nbsp; 13 km/h</div>
-        <div><img src="//front.pocasie.sk/_imgs/v2m/preciprob24x24.png" align="absmiddle" title="pravdepodobnosť zrážok" width=16 height=16 />&nbsp;19%</div>
+        <div><img src='//front.pocasie.sk/_imgs/windsp16x16/s.gif' alt='S' title='južný vietor' width=16 height=16 align=absmiddle />&nbsp; 20 km/h</div>
+        <div><img src="//front.pocasie.sk/_imgs/v2m/preciprob24x24.png" align="absmiddle" title="pravdepodobnosť zrážok" width=16 height=16 />&nbsp;98%</div>
         <div><img src="//front.pocasie.sk/_imgs/v2m/uvi24x24.png" align="absmiddle" title="intenzita UV žiarenia" width=16 height=16 />&nbsp;slabá (1/18)</div>
         <div></div>
       </li>
@@ -701,6 +661,146 @@ KONIEC
 nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
 nie :       <li class='date'>
 nie :         <div>01:00</div>
+nie :       </li>
+nie :       <li class='weather'>
+nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/prevazne-oblacno-s-prehankami-n.gif' alt='prevažne oblačno s prehánkami'>
+nie :       </li>
+nie :       <li class='temp'>
+nie :         <span class='day'>7°C</span>
+nie :       </li>
+nie :       <li class='info'>
+nie :         <p>prevažne oblačno s prehánkami
+nie :       </li>
+nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/s.gif' title='južný vietor' alt='S' width=16 height=16 align=absmiddle />&nbsp; 23 km/h</li>
+nie :       <li class='additional-info'>
+nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;1.6mm
+nie :       </li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;76%</li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;92%</li>
+nie :     </ul>
+nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
+nie :       <li class='date'>
+nie :         <div>04:00</div>
+nie :       </li>
+nie :       <li class='weather'>
+nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/prevazne-oblacno-n.gif' alt='prevažne oblačno'>
+nie :       </li>
+nie :       <li class='temp'>
+nie :         <span class='day'>6°C</span>
+nie :       </li>
+nie :       <li class='info'>
+nie :         <p>prevažne oblačno
+nie :       </li>
+nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/s.gif' title='južný vietor' alt='S' width=16 height=16 align=absmiddle />&nbsp; 20 km/h</li>
+nie :       <li class='additional-info'>
+nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;0.0mm
+nie :       </li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;84%</li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;88%</li>
+nie :     </ul>
+nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
+nie :       <li class='date'>
+nie :         <div>07:00</div>
+nie :       </li>
+nie :       <li class='weather'>
+nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/oblacno-s-prehankami.gif' alt='oblačno s prehánkami'>
+nie :       </li>
+nie :       <li class='temp'>
+nie :         <span class='day'>6°C</span>
+nie :       </li>
+nie :       <li class='info'>
+nie :         <p>oblačno s prehánkami
+nie :       </li>
+nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/s.gif' title='južný vietor' alt='S' width=16 height=16 align=absmiddle />&nbsp; 20 km/h</li>
+nie :       <li class='additional-info'>
+nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;1.0mm
+nie :       </li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;100%</li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;86%</li>
+nie :     </ul>
+nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
+nie :       <li class='date'>
+nie :         <div>10:00</div>
+nie :       </li>
+nie :       <li class='weather'>
+nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/dazd.gif' alt='dážď'>
+nie :       </li>
+nie :       <li class='temp'>
+nie :         <span class='day'>6°C</span>
+nie :       </li>
+nie :       <li class='info'>
+nie :         <p>dážď
+nie :       </li>
+nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/se.gif' title='juhovýchodný vietor' alt='SE' width=16 height=16 align=absmiddle />&nbsp; 18 km/h</li>
+nie :       <li class='additional-info'>
+nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;6.2mm
+nie :       </li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;100%</li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;96%</li>
+nie :     </ul>
+nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
+nie :       <li class='date'>
+nie :         <div>13:00</div>
+nie :       </li>
+nie :       <li class='weather'>
+nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/dazd.gif' alt='dážď'>
+nie :       </li>
+nie :       <li class='temp'>
+nie :         <span class='day'>6°C</span>
+nie :       </li>
+nie :       <li class='info'>
+nie :         <p>dážď
+nie :       </li>
+nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/se.gif' title='juhovýchodný vietor' alt='SE' width=16 height=16 align=absmiddle />&nbsp; 15 km/h</li>
+nie :       <li class='additional-info'>
+nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;7.0mm
+nie :       </li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;100%</li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;100%</li>
+nie :     </ul>
+nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
+nie :       <li class='date'>
+nie :         <div>16:00</div>
+nie :       </li>
+nie :       <li class='weather'>
+nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/dazd.gif' alt='dážď'>
+nie :       </li>
+nie :       <li class='temp'>
+nie :         <span class='day'>6°C</span>
+nie :       </li>
+nie :       <li class='info'>
+nie :         <p>dážď
+nie :       </li>
+nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/se.gif' title='juhovýchodný vietor' alt='SE' width=16 height=16 align=absmiddle />&nbsp; 13 km/h</li>
+nie :       <li class='additional-info'>
+nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;7.0mm
+nie :       </li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;100%</li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;96%</li>
+nie :     </ul>
+nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
+nie :       <li class='date'>
+nie :         <div>19:00</div>
+nie :       </li>
+nie :       <li class='weather'>
+nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/dazd-n.gif' alt='dážď'>
+nie :       </li>
+nie :       <li class='temp'>
+nie :         <span class='day'>5°C</span>
+nie :       </li>
+nie :       <li class='info'>
+nie :         <p>dážď
+nie :       </li>
+nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/s.gif' title='južný vietor' alt='S' width=16 height=16 align=absmiddle />&nbsp; 15 km/h</li>
+nie :       <li class='additional-info'>
+nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;3.2mm
+nie :       </li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;96%</li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;91%</li>
+nie :     </ul>
+nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
+nie :       <li class='date'>
+nie :         <div>22:00</div>
 nie :       </li>
 nie :       <li class='weather'>
 nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/dazd-so-snehom-n.gif' alt='dážď so snehom'>
@@ -711,153 +811,45 @@ nie :       </li>
 nie :       <li class='info'>
 nie :         <p>dážď so snehom
 nie :       </li>
-nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/n.gif' title='severný vietor' alt='N' width=16 height=16 align=absmiddle />&nbsp; 15 km/h</li>
+nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/n.gif' title='severný vietor' alt='N' width=16 height=16 align=absmiddle />&nbsp; 10 km/h</li>
 nie :       <li class='additional-info'>
-nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;2.2mm
+nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;4.2mm
 nie :       </li>
 nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;100%</li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;89%</li>
-nie :     </ul>
-nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
-nie :       <li class='date'>
-nie :         <div>04:00</div>
-nie :       </li>
-nie :       <li class='weather'>
-nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/oblacno-s-mrholenim-a-snehovymi-prehankami-n.gif' alt='oblačno s mrholením a snehovými prehánkami'>
-nie :       </li>
-nie :       <li class='temp'>
-nie :         <span class='day'>2°C</span>
-nie :       </li>
-nie :       <li class='info'>
-nie :         <p>oblačno s mrholením a snehovými prehánkami
-nie :       </li>
-nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/n.gif' title='severný vietor' alt='N' width=16 height=16 align=absmiddle />&nbsp; 13 km/h</li>
-nie :       <li class='additional-info'>
-nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;0.5mm
-nie :       </li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;98%</li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;83%</li>
-nie :     </ul>
-nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
-nie :       <li class='date'>
-nie :         <div>07:00</div>
-nie :       </li>
-nie :       <li class='weather'>
-nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/prevazne-oblacno-n.gif' alt='prevažne oblačno'>
-nie :       </li>
-nie :       <li class='temp'>
-nie :         <span class='day'>1°C</span>
-nie :       </li>
-nie :       <li class='info'>
-nie :         <p>prevažne oblačno
-nie :       </li>
-nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/n.gif' title='severný vietor' alt='N' width=16 height=16 align=absmiddle />&nbsp; 13 km/h</li>
-nie :       <li class='additional-info'>
-nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;0.0mm
-nie :       </li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;93%</li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;79%</li>
-nie :     </ul>
-nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
-nie :       <li class='date'>
-nie :         <div>10:00</div>
-nie :       </li>
-nie :       <li class='weather'>
-nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/polooblacno.gif' alt='polooblačno'>
-nie :       </li>
-nie :       <li class='temp'>
-nie :         <span class='day'>3°C</span>
-nie :       </li>
-nie :       <li class='info'>
-nie :         <p>polooblačno
-nie :       </li>
-nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/n.gif' title='severný vietor' alt='N' width=16 height=16 align=absmiddle />&nbsp; 15 km/h</li>
-nie :       <li class='additional-info'>
-nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;0.0mm
-nie :       </li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;46%</li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;69%</li>
-nie :     </ul>
-nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
-nie :       <li class='date'>
-nie :         <div>13:00</div>
-nie :       </li>
-nie :       <li class='weather'>
-nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/ciastocne-oblacno.gif' alt='čiastočne oblačno'>
-nie :       </li>
-nie :       <li class='temp'>
-nie :         <span class='day'>3°C</span>
-nie :       </li>
-nie :       <li class='info'>
-nie :         <p>čiastočne oblačno
-nie :       </li>
-nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/n.gif' title='severný vietor' alt='N' width=16 height=16 align=absmiddle />&nbsp; 18 km/h</li>
-nie :       <li class='additional-info'>
-nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;0.0mm
-nie :       </li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;35%</li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;52%</li>
-nie :     </ul>
-nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
-nie :       <li class='date'>
-nie :         <div>16:00</div>
-nie :       </li>
-nie :       <li class='weather'>
-nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/ciastocne-oblacno.gif' alt='čiastočne oblačno'>
-nie :       </li>
-nie :       <li class='temp'>
-nie :         <span class='day'>2°C</span>
-nie :       </li>
-nie :       <li class='info'>
-nie :         <p>čiastočne oblačno
-nie :       </li>
-nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/n.gif' title='severný vietor' alt='N' width=16 height=16 align=absmiddle />&nbsp; 5 km/h</li>
-nie :       <li class='additional-info'>
-nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;0.0mm
-nie :       </li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;37%</li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;63%</li>
-nie :     </ul>
-nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
-nie :       <li class='date'>
-nie :         <div>19:00</div>
-nie :       </li>
-nie :       <li class='weather'>
-nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/ciastocne-oblacno-n.gif' alt='čiastočne oblačno'>
-nie :       </li>
-nie :       <li class='temp'>
-nie :         <span class='day'>0°C</span>
-nie :       </li>
-nie :       <li class='info'>
-nie :         <p>čiastočne oblačno
-nie :       </li>
-nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/se.gif' title='juhovýchodný vietor' alt='SE' width=16 height=16 align=absmiddle />&nbsp; 5 km/h</li>
-nie :       <li class='additional-info'>
-nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;0.0mm
-nie :       </li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;22%</li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;53%</li>
-nie :     </ul>
-nie :     <ul class='daily-forecast' id='six-hourly-forecast'>
-nie :       <li class='date'>
-nie :         <div>22:00</div>
-nie :       </li>
-nie :       <li class='weather'>
-nie :         <img width=40 height=40 border=0 src='//front.pocasie.sk/_imgs/f60x60/jasno-n.gif' alt='jasno'>
-nie :       </li>
-nie :       <li class='temp'>
-nie :         <span class='day'>-1°C</span>
-nie :       </li>
-nie :       <li class='info'>
-nie :         <p>jasno
-nie :       </li>
-nie :       <li class='additional-info'><img src='//front.pocasie.sk/_imgs/windsp16x16/nw.gif' title='severozápadný vietor' alt='NW' width=16 height=16 align=absmiddle />&nbsp; 3 km/h</li>
-nie :       <li class='additional-info'>
-nie :         <img src="//front.pocasie.sk/_imgs/v2m/preci16x16.png" align="absmiddle" title="úhrn zrážok" width=16 height=16 />&nbsp;0.0mm
-nie :       </li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/cloud16x16.png" align="absmiddle" title="oblačnost" width=16 height=16 />&nbsp;0%</li>
-nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;64%</li>
+nie :       <li class='additional-info'><img src="//front.pocasie.sk/_imgs/v2m/humi24x24.png" align="absmiddle" title="relatívna vlhkosť" width=16 height=16 />&nbsp;97%</li>
 nie :     </ul>  
 nie :   
 nie :   <div class="mob-show" style="width:250px;margin:15px auto">
 nie : <div>&nbsp;</div>
+nie : <script type='text/javascript'>
+nie : GA_googleFillSlot("pocasie_mobile");
+nie : </script></div>
+nie : 
+nie : </div>    <div style="clear:both"></div>
+nie :     </div>
+nie :   </div>
+nie :   
+nie :   <div class="footer">
+nie :     <div class="logo" style="width:160px"></div>
+nie :     <a href="http://www.foreca.com"><img style="position:absolute; top:30px; left:860px;" src="//front.pocasie.sk/_imgs/lo/foreca.jpg" width="94" height="36" border="0" /></a>
+nie :     <div class="bottom-nav" style="margin-left:215px">
+nie :       <ul>
+nie :         <li><a href="/slovensko/">Slovensko</a></li>
+nie :         <li><a href="/europa/">Európa</a></li>
+nie :         <li><a href="/azia/">�?zia</a></li>
+nie :         <li><a href="/afrika/">Afrika</a></li>
+nie :         <li><a href="/severna-amerika/">Severná a stredná Amerika</a></li>
+nie :         <li><a href="/juzna-amerika/">Južná Amerika</a></li>
+nie :         <li><a href="/australia-a-oceania/">Austrália a Oceánia</a></li>
+nie :       </ul>
+nie :       <ul>
+nie :         <li>prevádzkovateľ stránok: Travel.Sk s.r.o. - <a href="/info/">Info, Kontakt</a></li>
+nie :       </ul>
+nie :     </div>
+nie :   </div>
+nie :   
+nie :   </div>
+nie : 
+nie : 
+nie : </body>
+nie : </html>

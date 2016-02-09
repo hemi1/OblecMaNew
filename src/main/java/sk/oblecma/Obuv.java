@@ -71,5 +71,10 @@ public class Obuv {
     private boolean nepremokave;
     private boolean vetrane;
 
+    @Override
+    public String toString() {
+       return nazov;
+    }
+
   
 }

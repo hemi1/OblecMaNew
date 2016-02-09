@@ -2,6 +2,7 @@ package sk.oblecma;
 
 import com.google.common.collect.HashBiMap;
 import java.awt.AlphaComposite;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics2D;
 import java.awt.GridBagConstraints;
@@ -27,6 +28,7 @@ import java.util.logging.Logger;
 import javafx.stage.PopupWindow;
 import javax.swing.ButtonModel;
 import javax.swing.DefaultButtonModel;
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -52,7 +54,7 @@ public class spustac extends javax.swing.JFrame {
     /**
      * Creates new form spustac
      */
-    public static boolean NapojeneNaDatabazu = true;
+   public static boolean NapojeneNaDatabazu = true;
 
     private final DatabazaSpojenie databaza = new DatabazaSpojenie(false);
 
@@ -264,8 +266,8 @@ public class spustac extends javax.swing.JFrame {
         historiaButton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         obujMaButton2 = new javax.swing.JButton();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        obujMaList = new javax.swing.JList<>();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        obujMaList = new javax.swing.JList();
         VyberObrazkaChooserFrame = new javax.swing.JFrame();
         VyberObrazkaPreOblecenieChooser = new javax.swing.JFileChooser();
         registraciaFrame = new javax.swing.JFrame();
@@ -355,10 +357,10 @@ public class spustac extends javax.swing.JFrame {
         pridajObuvButton = new javax.swing.JButton();
         odstranObuvButton = new javax.swing.JButton();
         jScrollPane9 = new javax.swing.JScrollPane();
-        obuvList = new javax.swing.JList<>();
+        obuvList = new javax.swing.JList();
         obuvLableZateplene = new javax.swing.JLabel();
         obuvLableNepremokave = new javax.swing.JLabel();
-        vetraneLable = new javax.swing.JLabel();
+        obuvLablevetrane = new javax.swing.JLabel();
         pridajObuvFrame = new javax.swing.JFrame();
         nazovObuvyText = new javax.swing.JTextField();
         obuvNepremokaveCheckBox1 = new javax.swing.JCheckBox();
@@ -693,13 +695,13 @@ public class spustac extends javax.swing.JFrame {
         });
 
         obujMaButton2.setText("Obuj Ma!");
-
-        obujMaList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        obujMaButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obujMaButton2ActionPerformed(evt);
+            }
         });
-        jScrollPane10.setViewportView(obujMaList);
+
+        jScrollPane11.setViewportView(obujMaList);
 
         javax.swing.GroupLayout HlavneMenuFrameLayout = new javax.swing.GroupLayout(HlavneMenuFrame.getContentPane());
         HlavneMenuFrame.getContentPane().setLayout(HlavneMenuFrameLayout);
@@ -708,7 +710,7 @@ public class spustac extends javax.swing.JFrame {
             .addGroup(HlavneMenuFrameLayout.createSequentialGroup()
                 .addGroup(HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(HlavneMenuFrameLayout.createSequentialGroup()
-                        .addContainerGap(19, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(odhlasButton)
                             .addComponent(stavPocasiaLabel)
@@ -734,14 +736,14 @@ public class spustac extends javax.swing.JFrame {
                         .addComponent(historiaButton)
                         .addGap(119, 119, 119)
                         .addComponent(kombinacieButton)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(hlavneMenuOblecenieButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(obujMaButton2)
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         HlavneMenuFrameLayout.setVerticalGroup(
             HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -762,9 +764,8 @@ public class spustac extends javax.swing.JFrame {
                     .addComponent(oblecMaButton)
                     .addComponent(obujMaButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane10)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                .addGroup(HlavneMenuFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(HlavneMenuFrameLayout.createSequentialGroup()
                         .addComponent(stupneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -774,7 +775,8 @@ public class spustac extends javax.swing.JFrame {
                         .addGap(22, 22, 22)
                         .addComponent(OdporucKombinaciuButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ZakazKombinaciuButton)))
+                        .addComponent(ZakazKombinaciuButton))
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(obleciemSiToButton)
                 .addGap(12, 12, 12)
@@ -1564,10 +1566,10 @@ public class spustac extends javax.swing.JFrame {
             }
         });
 
-        obuvList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        obuvList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                obuvListMouseClicked(evt);
+            }
         });
         jScrollPane9.setViewportView(obuvList);
 
@@ -1575,21 +1577,26 @@ public class spustac extends javax.swing.JFrame {
 
         obuvLableNepremokave.setText("nepremokave");
 
-        vetraneLable.setText("vetrane");
+        obuvLablevetrane.setText("vetrane");
 
         javax.swing.GroupLayout ObuvFrameLayout = new javax.swing.GroupLayout(ObuvFrame.getContentPane());
         ObuvFrame.getContentPane().setLayout(ObuvFrameLayout);
         ObuvFrameLayout.setHorizontalGroup(
             ObuvFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ObuvFrameLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(ObuvFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(odstranObuvButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(obuvLableZateplene)
-                    .addComponent(obuvLableNepremokave)
-                    .addComponent(vetraneLable)
-                    .addComponent(pridajObuvButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGroup(ObuvFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ObuvFrameLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(ObuvFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(odstranObuvButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pridajObuvButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(ObuvFrameLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(ObuvFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(obuvLableNepremokave)
+                            .addComponent(obuvLableZateplene)
+                            .addComponent(obuvLablevetrane))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1597,19 +1604,19 @@ public class spustac extends javax.swing.JFrame {
             ObuvFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ObuvFrameLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(ObuvFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(ObuvFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ObuvFrameLayout.createSequentialGroup()
                         .addComponent(pridajObuvButton)
                         .addGap(18, 18, 18)
                         .addComponent(odstranObuvButton)
                         .addGap(18, 18, 18)
-                        .addComponent(obuvLableZateplene))
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(obuvLableZateplene, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE))
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(obuvLableNepremokave)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(vetraneLable)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(obuvLablevetrane)
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         nazovObuvyText.setText("nazov obuvy");
@@ -2611,42 +2618,46 @@ public class spustac extends javax.swing.JFrame {
     private void obleceniePresunNoseneStareButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obleceniePresunNoseneStareButtonActionPerformed
         zmenNosenie(obleceniePresunNoseneStareButton);
     }//GEN-LAST:event_obleceniePresunNoseneStareButtonActionPerformed
-    private void refreshObuv() {
-        obuvList.setListData((String[]) obuvy.toArray());
+    
+  
+    private void refreshObuv() { 
+        obuvy.addAll(obuvDao.dajVsetkyObuvy());
+        obuvList.setListData(new Object[0]);
+        obuvList.setListData(obuvy.toArray());
+        obuvy.clear();
+            
+  
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        refreshObuv();
+        resetLable();
         ObuvFrame.setVisible(true);
         ObuvFrame.setAlwaysOnTop(true);
         ObuvFrame.pack();
-        nepremokneLabel.setVisible(false);
-        zatepleneLabel.setVisible(false);
-        vetraneLable.setVisible(false);
-        obuvy.addAll(obuvDao.dajVsetkyObuvy());
-        refreshObuv();
-        if (obuvList.isCursorSet()) {
-            for (Obuv obuv : obuvy) {
-                if (obuv.getNazov().equalsIgnoreCase(obuvList.getName())) {
-                    nepremokneLabel.setVisible(obuv.isNepremokave());
-                }
-                zatepleneLabel.setVisible(obuv.isZateplene());
-                vetraneLable.setVisible(obuv.isVetrane());
-            }
-        }
+        
+        
+        
+        
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void pridajObuvButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pridajObuvButtonActionPerformed
+        refreshObuv();
         pridajObuvFrame.setVisible(true);
         pridajObuvFrame.setAlwaysOnTop(true);
-        pridajObuvFrame.pack();
-        refreshObuv();
+        pridajObuvFrame.pack();        
         obuvNepremokaveCheckBox1.setSelected(false);
         obuvZatepleneCheckBox2.setSelected(false);
         vetraneCheckBox3.setSelected(false);
     }//GEN-LAST:event_pridajObuvButtonActionPerformed
 
+        
     private void odstranObuvButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odstranObuvButtonActionPerformed
-        obuvy.remove(obuvList.getSelectedIndex());
+        Obuv obuv = (Obuv) obuvList.getSelectedValue();
+        obuvDao.vyhodObuv(obuv.getIdObuvy(), aktualneID);
         refreshObuv();
+        resetLable();
+        
     }//GEN-LAST:event_odstranObuvButtonActionPerformed
 
     private void nazovObuvyTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nazovObuvyTextActionPerformed
@@ -2667,12 +2678,42 @@ public class spustac extends javax.swing.JFrame {
         obuvDao.pridajObuv(novaObuv, aktualneID);
         pridajObuvFrame.setVisible(false);
         pridajObuvFrame.setAlwaysOnTop(false);
-        refreshObuv();
+       refreshObuv();
     }//GEN-LAST:event_pridajObuvButtonObuvFrameActionPerformed
 
     private void obuvNepremokaveCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obuvNepremokaveCheckBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_obuvNepremokaveCheckBox1ActionPerformed
+
+   private List<Obuv> obuvy2 = new ArrayList<>();
+     
+    private void obujMaButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obujMaButton2ActionPerformed
+        obuvy2.addAll(obuvDao.dajVsetkyObuvy());
+        obujMaList.setListData(new Object[0]);        
+        obujMaList.setListData(obuvy2.toArray());
+        obuvy2.clear();
+        
+    }//GEN-LAST:event_obujMaButton2ActionPerformed
+
+    private void resetLable(){
+        obuvLableNepremokave.setVisible(false);
+        obuvLableZateplene.setVisible(false);
+        obuvLablevetrane.setVisible(false);
+   
+    }
+    
+    private void obuvListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_obuvListMouseClicked
+        Obuv oznacena = (Obuv) obuvList.getSelectedValue();
+        if(oznacena.isNepremokave()){resetLable();obuvLableNepremokave.setVisible(true);
+        obuvLableNepremokave.setForeground(Color.red);
+       }
+        if(oznacena.isVetrane()){resetLable();
+        obuvLablevetrane.setVisible(true);
+            obuvLablevetrane.setForeground(Color.blue);}
+        if(oznacena.isZateplene()){resetLable();
+        obuvLableZateplene.setVisible(true);
+        obuvLableZateplene.setForeground(Color.green);}
+    }//GEN-LAST:event_obuvListMouseClicked
 
     /**
      * @param args the command line arguments
@@ -2742,7 +2783,7 @@ public class spustac extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -2790,10 +2831,11 @@ public class spustac extends javax.swing.JFrame {
     private javax.swing.JButton obleceniePresunNoseneStareButton;
     private javax.swing.JButton obleciemSiToButton;
     private javax.swing.JButton obujMaButton2;
-    private javax.swing.JList<String> obujMaList;
+    private javax.swing.JList obujMaList;
     private javax.swing.JLabel obuvLableNepremokave;
     private javax.swing.JLabel obuvLableZateplene;
-    private javax.swing.JList<String> obuvList;
+    private javax.swing.JLabel obuvLablevetrane;
+    private javax.swing.JList obuvList;
     private javax.swing.JCheckBox obuvNepremokaveCheckBox1;
     private javax.swing.JCheckBox obuvZatepleneCheckBox2;
     private javax.swing.JButton odhlasButton;
@@ -2842,7 +2884,6 @@ public class spustac extends javax.swing.JFrame {
     private javax.swing.JButton upravitKategoriuButton;
     private javax.swing.JLabel vPraniLabel;
     private javax.swing.JCheckBox vetraneCheckBox3;
-    private javax.swing.JLabel vetraneLable;
     private javax.swing.JLabel vietorLable;
     private javax.swing.JLabel vietorPreKombinaciuLabel;
     private javax.swing.JComboBox vrstvaKategorieCombo;
